@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { useForm, usePlugin, useCMS } from 'tinacms'
+import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
+//import { GetStaticProps } from 'next'
 
-const pageData = {
+/*const pageData = {
   title: 'Tina is not a CMS',
   body: 'It is a toolkit for creating a custom CMS.',
 };
@@ -14,10 +16,12 @@ function EditButton() {
       {cms.enabled ? 'Exit edit mode' : 'Edit this site'}
     </button>
   );
-}
+}*/
 
-export default function Home() {
-  const formConfig = {
+export default function Home({ file }) {
+  console.log("file", file)
+  //const data = file.data
+  /*const formConfig = {
     id: 'tina-tutorial-index',
     label: 'Edit Page',
     fields: [
@@ -40,7 +44,7 @@ export default function Home() {
 
   const [editableData, form] = useForm(formConfig)
 
-  usePlugin(form)
+  usePlugin(form)*/
 
   return (
     <div className={styles.container}>
@@ -50,45 +54,13 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <EditButton />
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        
+        <h1 className="title">
+          {/**
+           * Render the title from `home.json`
+           
+          {data.title}*/}
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>{editableData.title}</h3>
-            <p>{editableData.body}</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
       </main>
 
       <footer className={styles.footer}>
@@ -103,4 +75,38 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps({preview,previewData}) {
+  console.log("log", preview,previewData)
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: 'content/home.json',
+      parse: parseJson,
+    })
+  }
+  return {
+    props: {
+      file: 'hallo'
+    }
+  }
+    /*if (preview) {
+      return getGithubPreviewProps({
+        ...previewData,
+        fileRelativePath: 'content/home.json',
+        parse: parseJson,
+      })
+    }
+    return {
+      props: {
+        sourceProvider: null,
+        error: null,
+        preview: false,
+        file: {
+          fileRelativePath: 'content/home.json',
+          data: (await import('../content/home.json')).default,
+        },
+      },
+    }*/
 }
