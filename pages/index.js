@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { useForm, usePlugin, useCMS } from 'tinacms'
+//import { useForm, usePlugin, useCMS } from 'tinacms'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
+import { usePlugin } from 'tinacms'
+import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 //import { GetStaticProps } from 'next'
 
 /*const pageData = {
@@ -20,7 +22,19 @@ function EditButton() {
 
 export default function Home({ file }) {
   console.log("file", file)
+  
   //const data = file.data
+  const formOptions = {
+    label: 'Home Page',
+    fields: [{ name: 'title', component: 'text' }],
+  }
+
+  // Registers a JSON Tina Form
+  const [data, form] = useGithubJsonForm(file, formOptions)
+  usePlugin(form)
+
+  useGithubToolbarPlugins()
+  
   /*const formConfig = {
     id: 'tina-tutorial-index',
     label: 'Edit Page',
@@ -58,8 +72,8 @@ export default function Home({ file }) {
         <h1 className="title">
           {/**
            * Render the title from `home.json`
-           
-          {data.title}*/}
+          */}
+          {data.title}
         </h1>
       </main>
 
@@ -88,25 +102,13 @@ export async function getStaticProps({preview,previewData}) {
   }
   return {
     props: {
-      file: 'hallo'
-    }
-  }
-    /*if (preview) {
-      return getGithubPreviewProps({
-        ...previewData,
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
         fileRelativePath: 'content/home.json',
-        parse: parseJson,
-      })
-    }
-    return {
-      props: {
-        sourceProvider: null,
-        error: null,
-        preview: false,
-        file: {
-          fileRelativePath: 'content/home.json',
-          data: (await import('../content/home.json')).default,
-        },
+        data: (await import('../content/home.json')).default,
       },
-    }*/
+    },
+  }
 }
