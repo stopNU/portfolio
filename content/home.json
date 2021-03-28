@@ -14,5 +14,12 @@
         "title": "Test"
       }
     ]
+  },
+  "skillset": {
+    "skills": [
+      {
+        "title": "Correct"
+      }
+    ]
   }
 }
