@@ -7,5 +7,12 @@
     {
       "title": "Item 2"
     }
-  ]
+  ],
+  "Skillset": {
+    "skills": [
+      {
+        "title": "Test"
+      }
+    ]
+  }
 }
