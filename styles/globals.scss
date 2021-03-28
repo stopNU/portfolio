@@ -21,12 +21,27 @@ a {
 section{
   max-width: $outer-wrapper;
   margin: 0 auto;
+  padding: 120px 0px;
 }
 .inner-wrapper{
   max-width: $inner-wrapper;
   margin: 0 auto;
+  padding: 0 30px;
 }
 .content-wrapper{
   max-width: $content-wrapper;
   margin: 0 auto;
+}
+
+
+.dark-bg{
+  background-color: $primary-dark;
+}
+
+h4{
+  margin: 0;
+}
+
+p{
+  margin: 0; 
 }

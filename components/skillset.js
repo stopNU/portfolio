@@ -4,16 +4,21 @@ export default function Skillset(props) {
     console.log("props", props)
     return (
         <div>
-            <h4>Skillest</h4> 
+            <h3 className={styles.title}>{props.data.title}</h3> 
             
-            {/* 
-            <ul className={styles['skillset-wrapper']}>
+            
+            <div className={styles['skillset-wrapper']}>
             {props.data.skills.map((value, index) => {
                 console.log(value, index)
-                return <li key={index}>{value.title}</li>
+                return (
+                <div key={index}>
+                   <h4 className={styles['box-title']}>{value.title}</h4> 
+                   <p className={styles['box-description']}>{value.description}</p> 
+                </div>
+                )
             })}
-            </ul>
-            */}
+            </div>
+            
         </div>
     )    
 }

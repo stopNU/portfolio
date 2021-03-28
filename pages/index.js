@@ -16,7 +16,10 @@ export default function Home({ file }) {
     label: 'Home Page',
     fields: [
       { 
-        name: 'title', component: 'text' 
+        name: 'title', label: 'Title', component: 'text' 
+      },
+      { 
+        name: 'subtitle',  label: 'Subtitle', component: 'text' 
       },
       {
         name: 'skillset',
@@ -24,10 +27,21 @@ export default function Home({ file }) {
         component: 'group',
         fields: [
           { 
+            name: 'title', component: 'text' 
+          },
+          { 
             name: 'skills', 
+            label: 'Skills List',
             component: 'group-list',
+            description: 'Your fake skills',
             fields: [
-                { name: 'title', component: 'text' }
+                { name: 'title', label: 'Title', component: 'text' },
+                {
+                  name: 'description',
+                  component: 'textarea',
+                  label: 'Description',
+                  description: 'Enter the description here',
+                },
             ] 
           }
         ]
@@ -52,13 +66,11 @@ export default function Home({ file }) {
 
       <main className={styles.main}>
         
-        <h1 className={styles.title}>
-          {/**
-           * Render the title from `home.json`
-          */}
-          {data.title}
-        </h1>
-        <section>
+        <div className={styles.header}>
+          <h1 className={styles.title}>{data.title}</h1>
+          <h3 className={styles.subtitle}>{data.subtitle}</h3>
+        </div>
+        <section className="dark-bg">
           <div className="content-wrapper">
             <SkillSet data={data.skillset} />
           </div>
