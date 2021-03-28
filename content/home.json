@@ -3,11 +3,14 @@
   "skillset": {
     "skills": [
       {
-        "title": "Hallo"
+        "title": "Hallo",
+        "description": "BTC to the motherfucking MOON!"
       },
       {
-        "title": "Item 2"
+        "title": "Item 2",
+        "description": "Desc"
       }
-    ]
+    ],
+    "title": "Skillset"
   }
 }
