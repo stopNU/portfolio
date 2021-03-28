@@ -55,8 +55,6 @@ export default function Home({ file }) {
 
   useGithubToolbarPlugins()
 
-  console.log("data", data)
-
   return (
     <div className={styles.container}>
       <Head>
