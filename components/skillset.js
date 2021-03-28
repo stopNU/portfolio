@@ -9,7 +9,7 @@ export default function Skillset({ file }) {
         label: 'Skillset',
         fields: [
             { 
-                name: 'Skills', 
+                name: 'skills', 
                 component: 'group-list',
                 fields: [
                     { name: 'title', component: 'text' }
