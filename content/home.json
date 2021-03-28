@@ -1,7 +1,11 @@
 {
-  "title": "Give me your boobs please 🦙",
+  "title": "Michael Thomsen",
   "skillset": {
     "skills": [
+      {
+        "description": "I am a cat that sleeps in a room full of people with psycho stares. I will kill them all. After I've eaten.",
+        "title": "Cat life"
+      },
       {
         "title": "Hallo",
         "description": "BTC to the motherfucking MOON!"
@@ -12,5 +16,6 @@
       }
     ],
     "title": "Skillset"
-  }
+  },
+  "subtitle": "International ALPHA of mystery"
 }
