@@ -26,12 +26,13 @@ export default function PortfolioProject({ file }) {
     )
 }
   
-export async function getStaticProps({preview,previewData}) {
-    console.log("testi test", preview,previewData)
+export async function getStaticProps({preview,previewData, params}) {
+
+    console.log("testi test", preview,previewData, params)
     if (preview) {
       return getGithubPreviewProps({
         ...previewData,
-        fileRelativePath: 'content/projects/test.json',
+        fileRelativePath: `content/projects/${params.slug}.json`,
         parse: parseJson,
       })
     }
@@ -41,8 +42,8 @@ export async function getStaticProps({preview,previewData}) {
         error: null,
         preview: false,
         file: {
-          fileRelativePath: 'content/projects/test.json',
-          data: (await import('../../content/projects/test.json')).default,
+          fileRelativePath: `content/projects/${params.slug}.json`,
+          data: (await import(`../../content/projects/${params.slug}.json`)).default,
         },
       },
     }
