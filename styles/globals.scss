@@ -1,3 +1,5 @@
+@import '../styles/_variables.scss';
+
 html,
 body {
   padding: 0;
@@ -13,4 +15,18 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+section{
+  max-width: $outer-wrapper;
+  margin: 0 auto;
+}
+.inner-wrapper{
+  max-width: $inner-wrapper;
+  margin: 0 auto;
+}
+.content-wrapper{
+  max-width: $content-wrapper;
+  margin: 0 auto;
 }

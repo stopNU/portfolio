@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 //import { useForm, usePlugin, useCMS } from 'tinacms'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
@@ -7,19 +7,6 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github
 
 import SkillSet from '../components/skillset'
 
-/*const pageData = {
-  title: 'Tina is not a CMS',
-  body: 'It is a toolkit for creating a custom CMS.',
-};
-
-function EditButton() {
-  const cms = useCMS()
-  return (
-    <button onClick={() => cms.toggle()}>
-      {cms.enabled ? 'Exit edit mode' : 'Edit this site'}
-    </button>
-  );
-}*/
 
 export default function Home({ file }) {
   //console.log("file", file)
@@ -31,12 +18,19 @@ export default function Home({ file }) {
       { 
         name: 'title', component: 'text' 
       },
-      { 
-        name: 'skills', 
-        component: 'group-list',
+      {
+        name: 'skillset',
+        label: 'Skillset',
+        component: 'group',
         fields: [
-            { name: 'title', component: 'text' }
-        ] 
+          { 
+            name: 'skills', 
+            component: 'group-list',
+            fields: [
+                { name: 'title', component: 'text' }
+            ] 
+          }
+        ]
       }
     ],
   }
@@ -58,13 +52,17 @@ export default function Home({ file }) {
 
       <main className={styles.main}>
         
-        <h1 className="title">
+        <h1 className={styles.title}>
           {/**
            * Render the title from `home.json`
           */}
           {data.title}
         </h1>
-        <SkillSet data={data.skills} />
+        <section>
+          <div className="content-wrapper">
+            <SkillSet data={data.skillset} />
+          </div>
+        </section>
       </main>
 
       <footer className={styles.footer}>

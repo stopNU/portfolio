@@ -4,7 +4,8 @@ import {
   TinacmsGithubProvider,
   GithubMediaStore,
 } from 'react-tinacms-github'
-import '../styles/globals.css'
+import '../styles/_variables.scss'
+import '../styles/globals.scss'
 
 
 function MyApp({ Component, pageProps }) {

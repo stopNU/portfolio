@@ -1,3 +1,4 @@
+import styles from './styles/skillset.module.scss'
 
 export default function Skillset(props) {
     console.log("props", props)
@@ -5,12 +6,14 @@ export default function Skillset(props) {
         <div>
             <h4>Skillest</h4> 
             
-            <ul>
-            {props.data.map((value, index) => {
+            {/* 
+            <ul className={styles['skillset-wrapper']}>
+            {props.data.skills.map((value, index) => {
                 console.log(value, index)
                 return <li key={index}>{value.title}</li>
             })}
             </ul>
+            */}
         </div>
     )    
 }
