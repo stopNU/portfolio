@@ -1,24 +1,12 @@
 {
   "title": "Give me your boobs please 🦙",
-  "skills": [
-    {
-      "title": "Hallo"
-    },
-    {
-      "title": "Item 2"
-    }
-  ],
-  "Skillset": {
-    "skills": [
-      {
-        "title": "Test"
-      }
-    ]
-  },
   "skillset": {
     "skills": [
       {
-        "title": "Correct"
+        "title": "Hallo"
+      },
+      {
+        "title": "Item 2"
       }
     ]
   }
