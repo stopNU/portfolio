@@ -22,12 +22,23 @@ function EditButton() {
 }*/
 
 export default function Home({ file }) {
-  console.log("file", file)
+  //console.log("file", file)
   
   //const data = file.data
   const formOptions = {
     label: 'Home Page',
-    fields: [{ name: 'title', component: 'text' }],
+    fields: [
+      { 
+        name: 'title', component: 'text' 
+      },
+      { 
+        name: 'skills', 
+        component: 'group-list',
+        fields: [
+            { name: 'title', component: 'text' }
+        ] 
+      }
+    ],
   }
 
   // Registers a JSON Tina Form
@@ -35,6 +46,8 @@ export default function Home({ file }) {
   usePlugin(form)
 
   useGithubToolbarPlugins()
+
+  console.log("data", data)
 
   return (
     <div className={styles.container}>
@@ -51,7 +64,7 @@ export default function Home({ file }) {
           */}
           {data.title}
         </h1>
-        <SkillSet />
+        <SkillSet data={data.skills} />
       </main>
 
       <footer className={styles.footer}>

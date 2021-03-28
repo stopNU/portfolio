@@ -1,53 +1,16 @@
-import { Field } from '@tinacms/core'
-import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
-import { usePlugin } from 'tinacms'
-import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 
-
-export default function Skillset({ file }) {
-    const formOptions = {
-        label: 'Skillset',
-        fields: [
-            { 
-                name: 'skills', 
-                component: 'group-list',
-                fields: [
-                    { name: 'title', component: 'text' }
-                ] 
-            }
-        ],
-    }
-    
-    // Registers a JSON Tina Form
-    const [data, form] = useGithubJsonForm(file, formOptions)
-    usePlugin(form)
-
-    useGithubToolbarPlugins()
-
+export default function Skillset(props) {
+    console.log("props", props)
     return (
         <div>
-            Skillest
+            <h4>Skillest</h4> 
+            
+            <ul>
+            {props.data.map((value, index) => {
+                console.log(value, index)
+                return <li key={index}>{value.title}</li>
+            })}
+            </ul>
         </div>
     )    
 }
-
-export async function getStaticProps({preview,previewData}) {
-    if (preview) {
-      return getGithubPreviewProps({
-        ...previewData,
-        fileRelativePath: 'content/home.json',
-        parse: parseJson,
-      })
-    }
-    return {
-      props: {
-        sourceProvider: null,
-        error: null,
-        preview: false,
-        file: {
-          fileRelativePath: 'content/home.json',
-          data: (await import('../content/home.json')).default,
-        },
-      },
-    }
-  }
