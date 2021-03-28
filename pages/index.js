@@ -4,7 +4,8 @@ import styles from '../styles/Home.module.css'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
-//import { GetStaticProps } from 'next'
+
+import SkillSet from '../components/skillset'
 
 /*const pageData = {
   title: 'Tina is not a CMS',
@@ -34,31 +35,6 @@ export default function Home({ file }) {
   usePlugin(form)
 
   useGithubToolbarPlugins()
-  
-  /*const formConfig = {
-    id: 'tina-tutorial-index',
-    label: 'Edit Page',
-    fields: [
-      {
-        name: 'title',
-        label: 'Title',
-        component: 'text',
-      },
-      {
-        name: 'body',
-        label: 'Body',
-        component: 'textarea',
-      },
-    ],
-    initialValues: pageData,
-    onSubmit: async () => {
-      window.alert('Saved!')
-    },
-  }
-
-  const [editableData, form] = useForm(formConfig)
-
-  usePlugin(form)*/
 
   return (
     <div className={styles.container}>
@@ -75,6 +51,7 @@ export default function Home({ file }) {
           */}
           {data.title}
         </h1>
+        <SkillSet />
       </main>
 
       <footer className={styles.footer}>
