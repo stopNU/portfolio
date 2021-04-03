@@ -26,7 +26,7 @@ export default function PortfolioProject({ file }) {
     )
 }
   
-export async function getStaticProps({preview,previewData, params}) {
+/*export async function getStaticProps({preview,previewData, params}) {
 
     console.log("testi test", preview,previewData, params)
     if (preview) {
@@ -47,7 +47,7 @@ export async function getStaticProps({preview,previewData, params}) {
         },
       },
     }
-  }
+  }*/
 
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts

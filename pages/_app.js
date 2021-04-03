@@ -6,6 +6,7 @@ import {
 } from 'react-tinacms-github'
 import '../styles/_variables.scss'
 import '../styles/globals.scss'
+import BlogPostCreatorPlugin from '../plugins/BlogPostCreator'
 
 
 function MyApp({ Component, pageProps }) {
@@ -41,6 +42,8 @@ function MyApp({ Component, pageProps }) {
     sidebar: pageProps.preview,
     toolbar: pageProps.preview,
   })
+
+  cms.plugins.add(BlogPostCreatorPlugin)
 
 
   return (
