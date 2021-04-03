@@ -1,12 +1,16 @@
 {
-    "projects": [
-        {
-            "name": "Test",
-            "slug": "test"
-        },
-        {
-            "name": "Second Test",
-            "slug": "second-test"
-        }
-    ]
+  "projects": [
+    {
+      "name": "Third is the charm",
+      "slug": "third-is-the-charm"
+    },
+    {
+      "name": "Test",
+      "slug": "test"
+    },
+    {
+      "name": "Second Test",
+      "slug": "second-test"
+    }
+  ]
 }
