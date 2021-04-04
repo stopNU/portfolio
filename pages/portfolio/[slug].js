@@ -2,6 +2,8 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import { getAllProjectSlugs } from '../../lib/projects'
+
+import Layout from '../../components/layout'
 import styles from '../../styles/Portfolio.module.scss'
 
 export default function PortfolioProject({ file }) {
@@ -19,12 +21,14 @@ export default function PortfolioProject({ file }) {
     useGithubToolbarPlugins()
 
     return (
-      <section className="dark-bg">
-        <div className="content-wrapper" className={styles.textWrapper}>
-          <h1>Project: {data.title}</h1>
-          <h3>{data.subtitle}</h3>
-        </div>
-      </section>
+      <Layout>
+        <section className="dark-bg">
+          <div className="content-wrapper" className={styles.textWrapper}>
+            <h1>Project: {data.title}</h1>
+            <h3>{data.subtitle}</h3>
+          </div>
+        </section>
+      </Layout>
     )
 }
   

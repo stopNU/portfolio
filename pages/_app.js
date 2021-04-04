@@ -1,3 +1,4 @@
+import { Provider } from 'next-auth/client'
 import { TinaCMS, TinaProvider, useCMS } from 'tinacms'
 import {
   GithubClient,
@@ -10,9 +11,8 @@ import BlogPostCreatorPlugin from '../plugins/BlogPostCreator'
 
 
 function MyApp({ Component, pageProps }) {
-  /*const cms = new TinaCMS({
-    sidebar: true,
-  })*/
+  //const [session, loading] = useSession()
+  
   const github = new GithubClient({
     proxy: '/api/proxy-github',
     authCallbackRoute: '/api/create-github-access-token',
@@ -47,16 +47,18 @@ function MyApp({ Component, pageProps }) {
 
 
   return (
-    <TinaProvider cms={cms}>
-      <TinacmsGithubProvider
-        onLogin={onLogin}
-        onLogout={onLogout}
-        error={pageProps.error}
-      >
-        <EditLink cms={cms} />
-        <Component {...pageProps} />
-      </TinacmsGithubProvider>
-    </TinaProvider>
+    <Provider session={pageProps.session}>
+      <TinaProvider cms={cms}>
+        <TinacmsGithubProvider
+          onLogin={onLogin}
+          onLogout={onLogout}
+          error={pageProps.error}
+        >
+    
+          <Component {...pageProps} />
+        </TinacmsGithubProvider>
+      </TinaProvider>
+    </Provider>
   )
 }
 
@@ -85,12 +87,4 @@ export default MyApp
 
 export const cms = {
   cms: TinaCMS
-}
-
-export const EditLink = ({ cms }) => {
-  return (
-    <button onClick={() => cms.toggle()}>
-      {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
-    </button>
-  )
 }

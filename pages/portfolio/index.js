@@ -5,8 +5,8 @@ import { useJsonForm } from 'next-tinacms-json'
 import BlogPostCreatorPlugin from '../../plugins/BlogPostCreator'
 import { getAllProjectSlugs } from '../../lib/projects'
 
+import Layout from '../../components/layout'
 import styles from '../../styles/Portfolio.module.scss'
-
 import Link from 'next/link'
 
 
@@ -43,6 +43,7 @@ export default function Portfolio({ file }) {
   console.log("paths", paths)
 
   return (
+    <Layout>
     <section className="dark-bg">
       <div className="content-wrapper">
 
@@ -72,6 +73,7 @@ export default function Portfolio({ file }) {
           </div>
           
       </section>
+      </Layout>
   )    
 }
 

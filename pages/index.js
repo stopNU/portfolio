@@ -5,11 +5,11 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 
+import Layout from '../components/layout'
 import SkillSet from '../components/skillset'
 
 
 export default function Home({ file }) {
-  //console.log("file", file)
   
   //const data = file.data
   const formOptions = {
@@ -62,9 +62,8 @@ export default function Home({ file }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        
-        <div className={styles.header}>
+      <Layout>
+      <div className={styles.header}>
           <h1 className={styles.title}>{data.title}</h1>
           <h3 className={styles.subtitle}>{data.subtitle}</h3>
         </div>
@@ -73,18 +72,9 @@ export default function Home({ file }) {
             <SkillSet data={data.skillset} />
           </div>
         </section>
-      </main>
+      </Layout>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      
     </div>
   )
 }
