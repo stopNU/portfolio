@@ -10,3 +10,16 @@
         text-decoration: underline;
     }
 }
+
+.textWrapper{
+    text-align: center;
+    color: #FFF;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    color: #FFF;
+}

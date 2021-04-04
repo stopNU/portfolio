@@ -3,6 +3,7 @@ import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import { useJsonForm } from 'next-tinacms-json'
 import BlogPostCreatorPlugin from '../../plugins/BlogPostCreator'
+import { getAllProjectSlugs } from '../../lib/projects'
 
 import styles from '../../styles/Portfolio.module.scss'
 
@@ -37,11 +38,15 @@ export default function Portfolio({ file }) {
   usePlugin(BlogPostCreatorPlugin)
   useGithubToolbarPlugins()
 
+  console.log("file", file)
+  const paths = file.paths
+  console.log("paths", paths)
+
   return (
     <section className="dark-bg">
       <div className="content-wrapper">
 
-       
+       <h2 className={styles.title}>Projects: (manual)</h2>
           {data.projects.map((value, index) => {
               return (
               <div key={index}>
@@ -49,6 +54,16 @@ export default function Portfolio({ file }) {
                   <a className={styles.link}>{value.name}</a>
                 </Link>
               </div>
+              )
+          })}
+<br></br>
+      <h2 className={styles.title}>Projects: (auto)</h2>
+          {paths.map((value, index) => {
+            console.log("value", value)
+              return (
+                <Link key={index} href={`/portfolio/${encodeURIComponent(value.params.slug)}`}>
+                  <a className={styles.link}>{<p>{value.params.slug}</p>}</a>
+                </Link>
               )
           })}
          
@@ -73,7 +88,8 @@ export default function Portfolio({ file }) {
 }*/
 
 export async function getStaticProps({preview,previewData}) {
-  console.log("log", preview,previewData)
+  const paths = getAllProjectSlugs()
+  console.log("log", paths)
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
@@ -89,6 +105,7 @@ export async function getStaticProps({preview,previewData}) {
       file: {
         fileRelativePath: 'content/portfolio.json',
         data: (await import('../../content/portfolio.json')).default,
+        paths: paths
       },
     },
   }

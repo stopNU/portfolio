@@ -1,6 +1,8 @@
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
+import { getAllProjectSlugs } from '../../lib/projects'
+import styles from '../../styles/Portfolio.module.scss'
 
 export default function PortfolioProject({ file }) {
     const formOptions = {
@@ -16,13 +18,13 @@ export default function PortfolioProject({ file }) {
     usePlugin(form)
     useGithubToolbarPlugins()
 
-    console.log("data", data)
     return (
-      <div>
-        
-      <h1>Portfolio Project: {data.title}</h1>
-       
-      </div>
+      <section className="dark-bg">
+        <div className="content-wrapper" className={styles.textWrapper}>
+          <h1>Project: {data.title}</h1>
+          <h3>{data.subtitle}</h3>
+        </div>
+      </section>
     )
 }
   
@@ -50,25 +52,10 @@ export async function getStaticProps({preview,previewData, params}) {
   }
 
 export async function getStaticPaths() {
-    // Call an external API endpoint to get posts
-    // ${process.env.VERCEL_URL}/my/route
-    //console.log("process.cwd()", process.cwd(), process.env.VERCEL_URL)
-    const baseUrl = process.env.VERCEL_URL === undefined ? 'http://localhost:3000' : process.env.VERCEL_URL
-    //console.log("calling:", baseUrl + '/api/projects')
-    const res2 = await fetch(baseUrl + '/api/projects')
-    //const res = await import('../../content/portfolio.json')
-    
-    const posts = await res2.json()
-    //console.log("res", posts.projects)
-
-    // Get the paths we want to pre-render based on posts
-    const paths = posts.projects.map((project) => ({
-        params: { slug: project.slug },
-    }))
-    //console.log("paths", paths)
-    //const paths = [ { params: { slug: 'test' } }, { params: { slug: 'second-test' } } ]
-
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return { paths, fallback: false }
+  const paths = getAllProjectSlugs()
+  console.log("paths", paths)
+  return {
+    paths,
+    fallback: false
+  }
 }
