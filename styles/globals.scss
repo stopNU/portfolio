@@ -45,3 +45,17 @@ h4{
 p{
   margin: 0; 
 }
+
+#__next > button, .SiteWrapper-sc-161ocmw button{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #FFF;
+}
+.SiteWrapper-sc-161ocmw button{
+  top: 80px;
+}
