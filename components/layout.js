@@ -1,5 +1,6 @@
 import { signIn, signOut, useSession } from "next-auth/client"
 import { TinaCMS, TinaProvider, useCMS } from 'tinacms'
+import Link from 'next/link'
 
 export default function Layout({ children }) {
     const [session, loading] = useSession()
@@ -9,6 +10,12 @@ export default function Layout({ children }) {
     return (
         <div>
             <div className="nav">
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+                <Link href="/portfolio">
+                  <a>Portfolio</a>
+                </Link>
             {session && (
                 <EditLink cms={cms} />
             )}
