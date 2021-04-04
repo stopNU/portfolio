@@ -52,8 +52,7 @@ export async function getStaticProps({preview,previewData, params}) {
   }
 
 export async function getStaticPaths() {
-  const paths = getAllProjectSlugs()
-  console.log("paths", paths)
+  const paths = await getAllProjectSlugs()
   return {
     paths,
     fallback: false
