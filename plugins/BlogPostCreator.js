@@ -2,52 +2,48 @@ const BlogPostCreatorPlugin = {
     __type: 'content-creator',
     fields: [
       {
-        label: 'Title',
-        name: 'title',
+        label: 'Name',
+        name: 'name',
         component: 'text',
         validation(title) {
           if (!title) return "Required."
         }
       },
       {
-        label: 'Date',
-        name: 'date',
-        component: 'date',
-        description: 'The default will be today.',
+        label: 'Subtitle',
+        name: 'subtitle',
+        component: 'text'
       },
       {
-        label: 'Author',
-        name: 'author_name',
+        label: 'Slug',
+        name: 'slug',
         component: 'text',
-        description: 'Who wrote this, yo?',
+        validation(title) {
+          if (!title) return "Required."
+        }
       },
     ],
-    async onSubmit(form, cms) {
-      const fileRelativePath = await this.filename(form)
+    onSubmit(form, cms) {
+      /*const fileRelativePath = await this.filename(form)
       const frontmatter = await this.frontmatter(form)
-      const markdownBody = await this.body(form)
+      const markdownBody = await this.body(form)*/
+
+        let jsonBody = {
+            "title": form.name,
+            "subtitle": form.subtitle
+        }
   
       cms.api.github
         .commit(
-          fileRelativePath,
-          getCachedFormData(fileRelativePath).sha,
-          toMarkdownString({
-            fileRelativePath,
-            frontmatter,
-            markdownBody,
-          }),
-          'Update from TinaCMS'
+            'content/projects/' + form.slug + '.json',
+            'Tesx',
+            JSON.stringify(jsonBody)
         )
         .then(response => {
-          setCachedFormData(fileRelativePath, {
-            sha: response.content.sha,
-          })
-          if (this.afterCreate) {
-            this.afterCreate(response)
-          }
+          console.log("respons", response)
         })
         .catch(e => {
-          return { [FORM_ERROR]: e }
+          return { e }
         })
     }
   }

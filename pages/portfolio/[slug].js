@@ -51,15 +51,22 @@ export async function getStaticProps({preview,previewData, params}) {
 
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts
-    //const res = await fetch('../../content/projects/test.json')
-    const res = await import('../../content/portfolio.json')
-    //console.log("res", res.projects)
-    //const posts = await res.json()
+    // ${process.env.VERCEL_URL}/my/route
+    //console.log("process.cwd()", process.cwd(), process.env.VERCEL_URL)
+    const baseUrl = process.env.VERCEL_URL === undefined ? 'http://localhost:3000' : process.env.VERCEL_URL
+    //console.log("calling:", baseUrl + '/api/projects')
+    const res2 = await fetch(baseUrl + '/api/projects')
+    //const res = await import('../../content/portfolio.json')
+    
+    const posts = await res2.json()
+    //console.log("res", posts.projects)
 
     // Get the paths we want to pre-render based on posts
-    const paths = res.projects.map((project) => ({
+    const paths = posts.projects.map((project) => ({
         params: { slug: project.slug },
     }))
+    //console.log("paths", paths)
+    //const paths = [ { params: { slug: 'test' } }, { params: { slug: 'second-test' } } ]
 
     // We'll pre-render only these paths at build time.
     // { fallback: false } means other routes should 404.
