@@ -56,6 +56,8 @@ export default function Portfolio({ file }) {
               </div>
               )
           })}
+
+        
 <br></br>
       <h2 className={styles.title}>Projects: (auto)</h2>
           {paths.map((value, index) => {
@@ -66,8 +68,7 @@ export default function Portfolio({ file }) {
                 </Link>
               )
           })}
-         
-
+        
           </div>
           
       </section>
@@ -88,14 +89,19 @@ export default function Portfolio({ file }) {
 }*/
 
 export async function getStaticProps({preview,previewData}) {
-  const paths = getAllProjectSlugs()
+  const paths = await getAllProjectSlugs()
   console.log("log", paths)
   if (preview) {
-    return getGithubPreviewProps({
+    const data = await getGithubPreviewProps({
       ...previewData,
       fileRelativePath: 'content/portfolio.json',
       parse: parseJson,
+    }).then((e) => {
+      e.props.file.paths = paths
+      return e
     })
+    console.log("data", data)
+    return data
   }
   return {
     props: {
