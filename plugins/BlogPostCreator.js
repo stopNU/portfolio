@@ -1,5 +1,6 @@
 const BlogPostCreatorPlugin = {
     __type: 'content-creator',
+    name: 'Add new project',
     fields: [
       {
         label: 'Name',
