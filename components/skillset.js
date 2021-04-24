@@ -1,4 +1,5 @@
 import styles from './styles/skillset.module.scss'
+import Image from 'next/image'
 
 export default function Skillset(props) {
     console.log("props", props)
@@ -15,6 +16,12 @@ export default function Skillset(props) {
                 console.log(value, index)
                 return (
                 <div key={index}>
+                    <Image
+                        src={value.icon}
+                        alt="Picture of the author"
+                        width={500}
+                        height={500}
+                    />
                    <h4 className={styles['box-title']}>{value.title}</h4> 
                    <p className={styles['box-description']}>{value.description}</p> 
                 </div>

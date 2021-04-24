@@ -44,11 +44,11 @@ export default function Home({ file }) {
                 },
                 {
                   label: 'Icon',
-                  name: 'frontmatter.hero_image',
+                  name: 'icon',
                   component: 'image',
                   parse: media => `/static/${media.filename}`,
                   uploadDir: () => '/static/',
-                  previewSrc: fullSrc => fullSrc.replace('/public', ''),
+                  previewSrc: fullSrc => fullSrc.replace('', ''),
                 },
                 {
                   component: 'number',
