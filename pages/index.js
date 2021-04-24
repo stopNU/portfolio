@@ -46,9 +46,9 @@ export default function Home({ file }) {
                   label: 'Icon',
                   name: 'frontmatter.hero_image',
                   component: 'image',
-                  parse: media => `/${media.filename}`,
-                  uploadDir: () => '/public/static/',
-                  previewSrc: fullSrc => fullSrc.replace('/public/static', ''),
+                  parse: media => `/static/${media.filename}`,
+                  uploadDir: () => '/static/',
+                  previewSrc: fullSrc => fullSrc.replace('/public', ''),
                 },
                 {
                   component: 'number',

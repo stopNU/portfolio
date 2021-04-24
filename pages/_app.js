@@ -80,6 +80,4 @@ const onLogout = () => {
 
 export default MyApp
 
-export const cms = {
-  cms: TinaCMS
-}
+export const cms = TinaCMS
