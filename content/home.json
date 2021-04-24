@@ -35,5 +35,11 @@
     ],
     "title": "Skillset"
   },
-  "subtitle": "Initize is great"
+  "subtitle": "Initize is great",
+  "header": {
+    "title": "Michael Thomsen",
+    "subtitle": "Experienced Web Developer",
+    "image": "/static/download.png",
+    "text": "Experienced developer working with both big and small companies. Skilled in both developing inside and with CMS' and front-end frameworks."
+  }
 }
