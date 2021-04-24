@@ -42,6 +42,25 @@ export default function Home({ file }) {
                   label: 'Description',
                   description: 'Enter the description here',
                 },
+                {
+                  label: 'Icon',
+                  name: 'frontmatter.hero_image',
+                  component: 'image',
+                  parse: media => `/${media.filename}`,
+                  uploadDir: () => '/public/static/',
+                  previewSrc: fieldValue => {
+                    const githubClient = useGithubClient()
+            
+                    return githubClient.getDownloadUrl(path.join('public', fieldValue))
+                  }
+                },
+                {
+                  component: 'number',
+                  name: 'percentage',
+                  label: 'Percentage',
+                  description: 'How good you are',
+                  step: 1,
+                },
             ] 
           }
         ]
@@ -63,15 +82,13 @@ export default function Home({ file }) {
       </Head>
 
       <Layout>
-      <div className={styles.header}>
+        <div className={styles.header}>
           <h1 className={styles.title}>{data.title}</h1>
           <h3 className={styles.subtitle}>{data.subtitle}</h3>
         </div>
-        <section className="dark-bg">
-          <div className="content-wrapper">
-            <SkillSet data={data.skillset} />
-          </div>
-        </section>
+        
+        <SkillSet data={data.skillset} />
+      
       </Layout>
 
       

@@ -3,8 +3,11 @@ import styles from './styles/skillset.module.scss'
 export default function Skillset(props) {
     console.log("props", props)
     return (
-        <div>
-            <h3 className={styles.title}>{props.data.title}</h3> 
+        <section className="dark-bg">
+          <div className="content-wrapper">
+            <div className="">
+                <h3 className={styles.title}>{props.data.title}</h3>
+            </div> 
             
             
             <div className={styles['skillset-wrapper']}>
@@ -19,6 +22,7 @@ export default function Skillset(props) {
             })}
             </div>
             
-        </div>
+            </div>
+        </section>
     )    
 }

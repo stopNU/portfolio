@@ -5,6 +5,8 @@ import {
   TinacmsGithubProvider,
   GithubMediaStore,
 } from 'react-tinacms-github'
+import { NextGithubMediaStore } from 'next-tinacms-github'
+
 import '../styles/_variables.scss'
 import '../styles/globals.scss'
 import BlogPostCreatorPlugin from '../plugins/BlogPostCreator'
@@ -21,24 +23,17 @@ function MyApp({ Component, pageProps }) {
     baseBranch: process.env.BASE_BRANCH, // e.g. 'master' or 'main' on newer repos
   })
 
+  const mediaStore = new NextGithubMediaStore(github)
+
   /**
    * 1. Create the TinaCMS instance
    */
    const cms = new TinaCMS({
     enabled: !!pageProps.preview,
     apis: {
-      /**
-       * 2. Register the GithubClient
-       */
       github,
     },
-    /**
-     * 3. Register the Media Store
-     */
-    media: new GithubMediaStore(github),
-    /**
-     * 4. Use the Sidebar and Toolbar
-     */
+    media: mediaStore,
     sidebar: pageProps.preview,
     toolbar: pageProps.preview,
   })
