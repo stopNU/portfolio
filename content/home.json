@@ -7,8 +7,11 @@
         "description": "Desc"
       },
       {
-        "title": "Hallo",
-        "description": "BTC to the motherfucking MOON!"
+        "title": "Hallosd",
+        "description": "BTC to the motherfucking MOON!",
+        "frontmatter": {
+          "hero_image": "/static/javascript-icon-png-23.jpg"
+        }
       },
       {
         "description": "I am a cat that sleeps in a room full of people with psycho stares. I will kill them all. After I've eaten.",
