@@ -1,19 +1,50 @@
 @import '../../styles/_variables.scss';
 
-.title{
-    color: #BABABA;
-    font-size: 3rem;
+.header{
+    display: flex;
+    margin-bottom: 95px;
+    .title{
+        color: $primary-brand;
+        font-size: 3rem;
+        padding-right: 60px;
+        line-height: 1;
+    }
+    .border{
+        width: 100%;
+        border-bottom: 1px solid #3C4047;
+    }
 }
 
 .skillset-wrapper{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    column-gap: 60px;
+    row-gap: 80px;
+    .skillset{
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        column-gap: 30px;
+    }
 }
 
-.box-title{
-    color: $primary-brand;
-}
-.box-description{
-    color: $primary-neutral;
-    margin-top: 30px;
+.text{
+    .title{
+        color: $primary-title;
+    }
+    .description{
+        color: $secondary-text;
+        margin-top: 10px;
+    }
+    .barWrapper{
+        width: 100%;
+        height: 15px;
+        border-radius: 6px;
+        margin-top: 20px;
+        border: 1px solid #313C3F;
+        .bar{
+            height: 15px;
+            background: transparent linear-gradient(270deg, $primary-brand-light 0%, $primary-brand 100%);
+            border-radius: 6px;
+        }
+    }
 }
