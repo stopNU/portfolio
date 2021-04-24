@@ -20,7 +20,11 @@
       },
       {
         "description": "I am a cat that sleeps in a room full of people with psycho stares. I will kill them all. After I've eaten.",
-        "title": "Cat life"
+        "title": "Cat life",
+        "frontmatter": {
+          "hero_image": "/static/kisspng-vue-js-javascript-library-angularjs-react-vue-js-5b4ebe1c091993.8950282915318871320373.png"
+        },
+        "percentage": 90
       }
     ],
     "title": "Skillset"
