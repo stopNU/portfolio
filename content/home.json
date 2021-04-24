@@ -3,10 +3,10 @@
   "skillset": {
     "skills": [
       {
-        "title": "Item 2",
-        "description": "Desc",
-        "icon": "/static/javascript-icon-png-23.jpg",
-        "percentage": 30
+        "title": "HTML",
+        "description": "No surprise here. A necessity for any developer.",
+        "icon": "/static/file_type_html_icon_130541.png",
+        "percentage": 100
       },
       {
         "title": "Hallosd",
