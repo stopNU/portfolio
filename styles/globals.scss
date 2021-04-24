@@ -21,7 +21,9 @@ a {
 section{
   max-width: $outer-wrapper;
   margin: 0 auto;
-  padding: 120px 0px;
+  &.padding{
+    padding: 120px 0px;
+  }
 }
 .inner-wrapper{
   max-width: $inner-wrapper;
@@ -38,10 +40,19 @@ section{
   background-color: $primary-dark;
 }
 
-h3{
+h1{
+  margin: 0;
+  font-size: 3rem;
+}
+h2{
   margin: 0;
 }
+h3{
+  margin: 0;
+  
+}
 h4{
+  font-size: 1.75rem; //28px
   margin: 0;
 }
 h5{
@@ -51,13 +62,12 @@ h5{
 
 p{
   margin: 0; 
+  line-height: 1.5;
+  color: $primary-text;
 }
 
-.nav{
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+.brand{
+  color: $primary-brand;
 }
 
 .section-header{

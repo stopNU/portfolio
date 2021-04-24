@@ -1,9 +1,9 @@
 //import styles from './styles/skillset.module.scss'
 
-export default function Skillset(props) {
+export default function Contact(props) {
     console.log("props", props)
     return (
-        <section className="">
+        <section className="padding">
             <div className="inner-wrapper">
                 <div className="content-wrapper">
                     <div className="section-header">

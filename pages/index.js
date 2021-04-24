@@ -6,6 +6,7 @@ import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 
 import Layout from '../components/layout'
+import Header from '../components/homepage/header'
 import SkillSet from '../components/homepage/skillset'
 import Contact from '../components/homepage/contact'
 
@@ -21,6 +22,30 @@ export default function Home({ file }) {
       },
       { 
         name: 'subtitle',  label: 'Subtitle', component: 'text' 
+      },
+      {
+        name: 'header',
+        label: 'Header Section',
+        component: 'group',
+        fields: [
+          { 
+            name: 'title', label: 'Title', component: 'text' 
+          },
+          { 
+            name: 'subtitle', label: 'Subtitle', component: 'text' 
+          },
+          { 
+            name: 'text', label: 'Text', component: 'textarea' 
+          },
+          {
+            label: 'Image',
+            name: 'image',
+            component: 'image',
+            parse: media => `/static/${media.filename}`,
+            uploadDir: () => '/static/',
+            previewSrc: fullSrc => fullSrc.replace('', ''),
+          },
+        ]
       },
       {
         name: 'skillset',
@@ -79,11 +104,7 @@ export default function Home({ file }) {
       </Head>
 
       <Layout>
-        <div className={styles.header}>
-          <h1 className={styles.title}>{data.title}</h1>
-          <h3 className={styles.subtitle}>{data.subtitle}</h3>
-        </div>
-        
+        <Header data={data.header} />
         <SkillSet data={data.skillset} />
         <Contact data={data.skillset} />
       

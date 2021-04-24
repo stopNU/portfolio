@@ -10,12 +10,12 @@ export default function Layout({ children }) {
 
     return (
         <div>
-            <div className="nav">
+            <div className={styles.nav}>
                 <Link href="/">
-                  <a>Home</a>
+                  <a className={styles.link}>Home</a>
                 </Link>
                 <Link href="/portfolio">
-                  <a>Portfolio</a>
+                  <a className={styles.link}>Portfolio</a>
                 </Link>
             {session && (
                 <EditLink cms={cms} />

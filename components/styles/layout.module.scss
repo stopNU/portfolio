@@ -3,3 +3,21 @@
 .bodyContainer{
     background-color: $secondary-dark;
 }
+
+.nav{
+    position: absolute;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.link{
+    color: #C9C9C9;
+    text-transform: uppercase;
+}

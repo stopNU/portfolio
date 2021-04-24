@@ -1,0 +1,24 @@
+@import '../../../styles/_variables.scss';
+
+.bgWrapper{
+    background: transparent linear-gradient(360deg, rgba($primary-dark, 1) 0%, $primary-dark 14%, rgba($secondary-dark, 0.6) 100%);
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 340px;
+    padding-top: 260px;
+}
+
+.textWrapper{
+    .title{
+        color: $primary-brand;
+    }
+    .subtitle{
+        margin-top: 20px;
+        color: $primary-title;
+    }
+    .text{
+        margin-top: 30px;
+    }
+}

@@ -4,11 +4,11 @@ import Image from 'next/image'
 export default function Skillset(props) {
     console.log("props", props)
     return (
-        <section className="dark-bg">
+        <section className="dark-bg padding">
             <div className="inner-wrapper">
                 <div className="content-wrapper">
                     <div className="section-header">
-                        <h3 className="title">{props.data.title}</h3>
+                        <h2 className="title">{props.data.title}</h2>
                         <div className="border"></div>
                     </div> 
                     
