@@ -48,11 +48,7 @@ export default function Home({ file }) {
                   component: 'image',
                   parse: media => `/${media.filename}`,
                   uploadDir: () => '/public/static/',
-                  previewSrc: fieldValue => {
-                    const githubClient = useGithubClient()
-            
-                    return githubClient.getDownloadUrl(path.join('public', fieldValue))
-                  }
+                  previewSrc: fullSrc => fullSrc.replace('/public/static', ''),
                 },
                 {
                   component: 'number',
