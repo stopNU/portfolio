@@ -1,6 +1,7 @@
 import { signIn, signOut, useSession } from "next-auth/client"
 import { TinaCMS, TinaProvider, useCMS } from 'tinacms'
 import Link from 'next/link'
+import styles from './styles/layout.module.scss'
 
 export default function Layout({ children }) {
     const [session, loading] = useSession()
@@ -20,7 +21,7 @@ export default function Layout({ children }) {
                 <EditLink cms={cms} />
             )}
             </div>
-            <div>{children}</div>
+            <div className={styles.bodyContainer}>{children}</div>
             <footer>
                 {!session && (
                     <>

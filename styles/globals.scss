@@ -59,3 +59,18 @@ p{
   justify-content: center;
   gap: 30px;
 }
+
+.section-header{
+  display: flex;
+  margin-bottom: 95px;
+  .title{
+      color: $primary-brand;
+      font-size: 3rem;
+      padding-right: 60px;
+      line-height: 1;
+  }
+  .border{
+      width: 100%;
+      border-bottom: 1px solid #3C4047;
+  }
+}

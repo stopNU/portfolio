@@ -6,7 +6,8 @@ import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 
 import Layout from '../components/layout'
-import SkillSet from '../components/skillset'
+import SkillSet from '../components/homepage/skillset'
+import Contact from '../components/homepage/contact'
 
 
 export default function Home({ file }) {
@@ -84,6 +85,7 @@ export default function Home({ file }) {
         </div>
         
         <SkillSet data={data.skillset} />
+        <Contact data={data.skillset} />
       
       </Layout>
 

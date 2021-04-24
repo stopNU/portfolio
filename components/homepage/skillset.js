@@ -7,9 +7,9 @@ export default function Skillset(props) {
         <section className="dark-bg">
             <div className="inner-wrapper">
                 <div className="content-wrapper">
-                    <div className={styles.header}>
-                        <h3 className={styles.title}>{props.data.title}</h3>
-                        <div className={styles.border}></div>
+                    <div className="section-header">
+                        <h3 className="title">{props.data.title}</h3>
+                        <div className="border"></div>
                     </div> 
                     
                     
@@ -27,8 +27,10 @@ export default function Skillset(props) {
                                 layout="fixed"
                             />
                             <div className={styles.text}>
-                                <h5 className={styles.title}>{value.title}</h5> 
-                                <p className={styles.description}>{value.description}</p>
+                                <div>
+                                    <h5 className={styles.title}>{value.title}</h5> 
+                                    <p className={styles.description}>{value.description}</p>
+                                </div>
                                 <div className={styles.barWrapper}>
                                     <div className={styles.bar} style={{ width: `${value.percentage}%` }}></div>
                                 </div>
