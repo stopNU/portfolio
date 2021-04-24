@@ -9,16 +9,28 @@
         "percentage": 100
       },
       {
-        "title": "Hallosd",
-        "description": "BTC to the motherfucking MOON!",
-        "icon": "/static/download.png",
-        "percentage": 40
+        "title": "CSS (SASS)",
+        "description": "Spent so much time looking at pixels I sometimes wonder what normal people see.",
+        "icon": "/static/css-3.png",
+        "percentage": 95
       },
       {
-        "description": "I am a cat that sleeps in a room full of people with psycho stares. I will kill them all. After I've eaten.",
-        "title": "Cat life",
+        "description": "The duct tape of the internet.",
+        "title": "JavaScript",
         "icon": "/static/javascript-icon-png-23.jpg",
-        "percentage": 90
+        "percentage": 75
+      },
+      {
+        "title": "VueJS (NuxtJS)",
+        "icon": "/static/kisspng-vue-js-javascript-library-angularjs-react-vue-js-5b4ebe1c091993.8950282915318871320373.png",
+        "description": "My first real love in front-end development. Big believer in static sites hence NuxtJS.",
+        "percentage": 85
+      },
+      {
+        "title": "ReactJS (NextJS)",
+        "description": "Any front-end developer needs to know this one, actually this site is built with NextJS (and Tina CMS).",
+        "percentage": 50,
+        "icon": "/static/1280px-React-icon.svg.png"
       }
     ],
     "title": "Skillset"
