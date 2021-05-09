@@ -1,7 +1,9 @@
 import { signIn, signOut, useSession } from "next-auth/client"
-import { TinaCMS, TinaProvider, useCMS } from 'tinacms'
+import { useCMS } from 'tinacms'
 import Link from 'next/link'
 import styles from './styles/layout.module.scss'
+
+import data from '../content/home.json'
 
 export default function Layout({ children }) {
     const [session, loading] = useSession()
@@ -22,19 +24,21 @@ export default function Layout({ children }) {
             )}
             </div>
             <div className={styles.bodyContainer}>{children}</div>
-            <footer>
-                {!session && (
-                    <>
-                    Not signed in <br />
-                    <button onClick={signIn}>Sign in</button>
-                    </>
-                )}
-                {session && (
-                    <>
-                    Signed in as {session.user.name} <br />
-                    <button onClick={signOut}>Sign out</button>
-                    </>
-                )}
+            <footer className={styles.footer}>
+                <div className={styles.login}>
+                    {!session && (
+                        <>
+                        <p className={styles.button} onClick={signIn}>Sign in</p>
+                        </>
+                    )}
+                    {session && (
+                        <>
+                        <p>Signed in as {session.user.name} -</p>
+                        <p className={styles.button} onClick={signOut}>Sign out</p>
+                        </>
+                    )}
+                </div>
+                <p className={styles.copyright}>{data.copyright}</p>
             </footer>
         </div>
     )

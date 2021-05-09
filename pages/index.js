@@ -7,8 +7,11 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github
 
 import Layout from '../components/layout'
 import Header from '../components/homepage/header'
+import Portfolio from '../components/homepage/portfolio'
+import About from '../components/homepage/about'
 import SkillSet from '../components/homepage/skillset'
 import Contact from '../components/homepage/contact'
+import Banner from '../components/shared/banner'
 
 
 export default function Home({ file }) {
@@ -17,12 +20,6 @@ export default function Home({ file }) {
   const formOptions = {
     label: 'Home Page',
     fields: [
-      { 
-        name: 'title', label: 'Title', component: 'text' 
-      },
-      { 
-        name: 'subtitle',  label: 'Subtitle', component: 'text' 
-      },
       {
         name: 'header',
         label: 'Header Section',
@@ -33,6 +30,27 @@ export default function Home({ file }) {
           },
           { 
             name: 'subtitle', label: 'Subtitle', component: 'text' 
+          },
+          { 
+            name: 'text', label: 'Text', component: 'textarea' 
+          },
+          {
+            label: 'Image',
+            name: 'image',
+            component: 'image',
+            parse: media => `/static/${media.filename}`,
+            uploadDir: () => '/static/',
+            previewSrc: fullSrc => fullSrc.replace('', ''),
+          },
+        ]
+      },
+      {
+        name: 'about',
+        label: 'About Section',
+        component: 'group',
+        fields: [
+          { 
+            name: 'title', label: 'Title', component: 'text' 
           },
           { 
             name: 'text', label: 'Text', component: 'textarea' 
@@ -86,7 +104,29 @@ export default function Home({ file }) {
             ] 
           }
         ]
-      }
+      },
+      {
+        name: 'banner',
+        label: 'Banner Section',
+        component: 'group',
+        fields: [
+          { 
+            name: 'title', label: 'Title', component: 'text' 
+          },
+          { 
+            name: 'text', label: 'Text', component: 'textarea' 
+          },
+          { 
+            name: 'btn_title', label: 'Button title', component: 'text' 
+          },
+          { 
+            name: 'btn_url', label: 'Button url', component: 'text' 
+          },
+        ]
+      },
+      { 
+        name: 'copyright', label: 'Copyright text', component: 'text' 
+      },
     ],
   }
 
@@ -105,9 +145,11 @@ export default function Home({ file }) {
 
       <Layout>
         <Header data={data.header} />
+        <Portfolio data={data.skillset} />
+        <About data={data.about} />
         <SkillSet data={data.skillset} />
         <Contact data={data.skillset} />
-      
+        <Banner data={data.banner} />
       </Layout>
 
       
@@ -116,7 +158,6 @@ export default function Home({ file }) {
 }
 
 export async function getStaticProps({preview,previewData}) {
-  console.log("log", preview,previewData)
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,

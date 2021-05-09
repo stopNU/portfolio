@@ -21,3 +21,27 @@
     color: #C9C9C9;
     text-transform: uppercase;
 }
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: $content-wrapper;
+    margin: 0 auto;
+    padding: 60px 0 30px;
+    .copyright{
+        text-align: center;
+    }
+    .login{
+        display: flex;
+        column-gap: 5px;
+        .button{
+            background: transparent;
+            border: 0;
+            color: $primary-text;
+            &:hover{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+}

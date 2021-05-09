@@ -2,7 +2,6 @@ import styles from './styles/header.module.scss'
 import Image from 'next/image'
 
 export default function Header(props) {
-    console.log("header props", props)
     return (
         <section className={styles.bgWrapper}>
             <div className="inner-wrapper">

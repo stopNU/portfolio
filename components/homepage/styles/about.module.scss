@@ -1,0 +1,25 @@
+@import '../../../styles/_variables.scss';
+
+.boxWrapper{
+    background: transparent linear-gradient(103deg, #3C4047 0%, #2E3238 100%);
+    box-shadow: 0px 10px 16px #00000029;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 90px;
+    padding: 0 50px;
+    .textWrapper{
+        margin: 50px 0;
+        .title{
+            color: $primary-title;
+        }
+        .text{
+            margin-top: 20px;
+        }
+    }
+    .image{}
+}
+
+.bgWrapper{
+    background: transparent linear-gradient(180deg, $secondary-dark 0%, $secondary-dark 50%, $primary-dark 50%, $primary-dark 100%);
+}

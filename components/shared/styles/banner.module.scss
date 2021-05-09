@@ -1,0 +1,22 @@
+@import '../../../styles/_variables.scss';
+
+.banner{
+    background: transparent linear-gradient(180deg, $primary-brand-light 0%, $primary-brand 100%);
+    padding: 50px 0;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    max-width: $content-wrapper;
+    margin: 0 auto;
+    column-gap: 400px;
+    align-items: center;
+    .title{
+        color: $primary-title-dark;
+    }
+    .text{
+        color: #184D47;
+        margin-top: 10px;
+    }
+}

@@ -2,7 +2,6 @@ import styles from './styles/skillset.module.scss'
 import Image from 'next/image'
 
 export default function Skillset(props) {
-    console.log("props", props)
     return (
         <section className="dark-bg padding">
             <div className="inner-wrapper">
@@ -15,7 +14,6 @@ export default function Skillset(props) {
                     
                     <div className={styles['skillset-wrapper']}>
                     {props.data.skills.map((value, index) => {
-                        console.log(value, index)
                         return (
                         <div key={index} className={styles.skillset}>
                             <Image
