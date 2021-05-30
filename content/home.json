@@ -64,8 +64,18 @@
         "url": "/portolio/secure-group",
         "image": "/static/portfolio-cover-img-securegroup-desk.png"
       },
-      {},
-      {}
+      {
+        "image": "/static/portfolio-cover-img-securegroupwiki-desk.png",
+        "title": "Secure Group Wiki",
+        "description": "Company wikipedia developed with MediaWiki.",
+        "url": "/portfolio/secure-group-wiki"
+      },
+      {
+        "image": "/static/portfolio-cover-img-transworld-desk.png",
+        "title": "TransWorld",
+        "description": "New website for the South African branch of TransWorld. Built as a static site with Vue (NuxtJS).",
+        "url": "/portfolio/transworld"
+      }
     ]
   }
 }
