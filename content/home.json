@@ -53,5 +53,9 @@
     "btn_url": "https://stillcreativ.com/",
     "btn_title": "More info",
     "text": "I've worked with him on several projects and in my opinion he always deliver incredible design."
+  },
+  "portfolio": {
+    "title": "My portfolio",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus ut faucibus pulvinar elementum integer. Hendrerit dolor magna eget est lorem ipsum dolor sit."
   }
 }
