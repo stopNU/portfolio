@@ -1,1 +1,10 @@
 @import '../../../styles/_variables.scss';
+
+.text{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    p{
+        max-width: 600px;
+    }
+}

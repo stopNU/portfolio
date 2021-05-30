@@ -88,3 +88,12 @@ p{
       border-bottom: 1px solid #3C4047;
   }
 }
+
+.btn{
+  display: inline-table;
+  color: #FAFAFA;
+  border: 2px solid $primary-text;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 0.875rem;
+}

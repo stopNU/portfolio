@@ -45,6 +45,43 @@ export default function Home({ file }) {
         ]
       },
       {
+        name: 'portfolio',
+        label: 'Portfolio Section',
+        component: 'group',
+        fields: [
+          { 
+            name: 'title', label: 'Title', component: 'text' 
+          },
+          { 
+            name: 'text', label: 'Text', component: 'textarea' 
+          },
+          { 
+            name: 'projects', 
+            label: 'Projects List',
+            component: 'group-list',
+            description: 'Highlighted projects',
+            fields: [
+                { name: 'title', label: 'Title', component: 'text' },
+                {
+                  name: 'description',
+                  component: 'textarea',
+                  label: 'Description',
+                  description: 'Enter the description here',
+                },
+                { name: 'url', label: 'URL', component: 'text' },
+                {
+                  label: 'Image',
+                  name: 'image',
+                  component: 'image',
+                  parse: media => `/static/${media.filename}`,
+                  uploadDir: () => '/static/',
+                  previewSrc: fullSrc => fullSrc.replace('', ''),
+                },
+            ] 
+          }
+        ]
+      },
+      {
         name: 'about',
         label: 'About Section',
         component: 'group',
@@ -145,7 +182,7 @@ export default function Home({ file }) {
 
       <Layout>
         <Header data={data.header} />
-        <Portfolio data={data.skillset} />
+        <Portfolio data={data.portfolio} />
         <About data={data.about} />
         <SkillSet data={data.skillset} />
         <Contact data={data.skillset} />
