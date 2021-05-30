@@ -67,12 +67,14 @@ export default function Portfolio({ file }) {
 
 export async function getStaticProps({preview,previewData}) {
   //const paths = await getAllProjectSlugs()
-  const todos = await fetch(
-    `${process.env.NEXTAUTH_URL}/api/projects`
-  ).then((response) => {
-    console.log("response", response)
-    return response.json()
-  });
+
+  const projects = []
+  try {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/projects`)
+    projects = await res.json()
+  } catch(err) {
+    console.error(err);
+  }
 
   
   if (preview) {
@@ -82,7 +84,7 @@ export async function getStaticProps({preview,previewData}) {
       parse: parseJson,
     }).then((e) => {
       //e.props.file.paths = paths
-      e.props.file.api = todos
+      e.props.file.api = projects
       return e
     })
     return data
@@ -96,7 +98,7 @@ export async function getStaticProps({preview,previewData}) {
         fileRelativePath: 'content/portfolio.json',
         data: (await import('../../content/portfolio.json')).default,
         //paths: paths,
-        api: todos
+        api: projects
       },
     },
   }
