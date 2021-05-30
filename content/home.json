@@ -77,5 +77,9 @@
         "url": "/portfolio/transworld"
       }
     ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "text": "Feel free to contact me if you have any questions or think I could help you with your next project."
   }
 }
