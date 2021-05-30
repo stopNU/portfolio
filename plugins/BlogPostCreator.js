@@ -3,7 +3,7 @@ const BlogPostCreatorPlugin = {
     name: 'Add new project',
     fields: [
       {
-        label: 'Name',
+        label: 'Name/client',
         name: 'name',
         component: 'text',
         validation(title) {
@@ -11,9 +11,9 @@ const BlogPostCreatorPlugin = {
         }
       },
       {
-        label: 'Subtitle',
-        name: 'subtitle',
-        component: 'text'
+        label: 'Short description',
+        name: 'short_description',
+        component: 'textarea'
       },
       {
         label: 'Slug',
@@ -23,6 +23,14 @@ const BlogPostCreatorPlugin = {
           if (!title) return "Required."
         }
       },
+      {
+        label: 'Thumbnail',
+        name: 'thumbnail',
+        component: 'image',
+        parse: media => `/static/${media.filename}`,
+        uploadDir: () => '/static/',
+        previewSrc: fullSrc => fullSrc.replace('', ''),
+      }
     ],
     onSubmit(form, cms) {
       /*const fileRelativePath = await this.filename(form)
@@ -30,8 +38,10 @@ const BlogPostCreatorPlugin = {
       const markdownBody = await this.body(form)*/
 
         let jsonBody = {
-            "title": form.name,
-            "subtitle": form.subtitle
+            "name": form.name,
+            "short_description": form.short_description,
+            "slug": form.slug,
+            "thumbnail": form.thumbnail
         }
   
       cms.api.github

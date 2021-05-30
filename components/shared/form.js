@@ -62,34 +62,50 @@ export default () => {
   }
   return (
     <main>
-      <form onSubmit={handleOnSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
-          type="name"
-          name="_name"
-          onChange={handleOnChange}
-          required
-          value={inputs.name}
-        />
+      <form onSubmit={handleOnSubmit} className="form">
+        
+        <div className="row two">
+            <div className="input">
+                <label htmlFor="name">Name</label>
+                <input
+                  id="name"
+                  type="name"
+                  name="_name"
+                  onChange={handleOnChange}
+                  placeholder="Name"
+                  required
+                  value={inputs.name}
+                />
+            </div>
+            
+            <div className="input">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="_replyto"
+                  onChange={handleOnChange}
+                  placeholder="Email"
+                  required
+                  value={inputs.email}
+                />
+            </div>
+        </div>
 
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="_replyto"
-          onChange={handleOnChange}
-          required
-          value={inputs.email}
-        />
-        <label htmlFor="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          onChange={handleOnChange}
-          required
-          value={inputs.message}
-        />
+        <div className="row one">
+            <div className="input">
+                <label htmlFor="message">Message</label>
+                <textarea
+                id="message"
+                name="message"
+                onChange={handleOnChange}
+                placeholder="How can I help you?"
+                required
+                value={inputs.message}
+                />
+            </div>
+        </div>
+
         <button type="submit" disabled={status.submitting}>
           {!status.submitting
             ? !status.submitted

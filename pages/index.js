@@ -143,6 +143,19 @@ export default function Home({ file }) {
         ]
       },
       {
+        name: 'contact',
+        label: 'Contact Section',
+        component: 'group',
+        fields: [
+          { 
+            name: 'title', label: 'Title', component: 'text' 
+          },
+          { 
+            name: 'text', label: 'Text', component: 'textarea' 
+          }
+        ]
+      },
+      {
         name: 'banner',
         label: 'Banner Section',
         component: 'group',
@@ -185,7 +198,7 @@ export default function Home({ file }) {
         <Portfolio data={data.portfolio} />
         <About data={data.about} />
         <SkillSet data={data.skillset} />
-        <Contact data={data.skillset} />
+        <Contact data={data.contact} />
         <Banner data={data.banner} />
       </Layout>
 

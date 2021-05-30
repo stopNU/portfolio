@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Portfolio(props) {
-    console.log("props port", props)
     return (
         <section className="padding">
             <div className="inner-wrapper">

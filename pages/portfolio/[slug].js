@@ -8,11 +8,61 @@ import styles from '../../styles/Portfolio.module.scss'
 
 export default function PortfolioProject({ file }) {
     const formOptions = {
-        label: 'Test Page',
+        label: 'Project Page',
         fields: [
-          { 
-            name: 'title', label: 'Title', component: 'text' 
-          }
+          {
+            label: 'Name/client',
+            name: 'name',
+            component: 'text',
+            validation(title) {
+              if (!title) return "Required."
+            }
+          },
+          {
+            label: 'Short description',
+            name: 'short_description',
+            component: 'textarea'
+          },
+          {
+            label: 'Slug',
+            name: 'slug',
+            component: 'text',
+            validation(title) {
+              if (!title) return "Required."
+            }
+          },
+          {
+            label: 'Thumbnail',
+            name: 'thumbnail',
+            component: 'image',
+            parse: media => `/static/${media.filename}`,
+            uploadDir: () => '/static/',
+            previewSrc: fullSrc => fullSrc.replace('', ''),
+          },
+          {
+            name: 'content',
+            label: 'Content',
+            component: 'group',
+            fields: [
+              { 
+                name: 'title', label: 'Title', component: 'text' 
+              },
+              { 
+                name: 'subtitle', label: 'Subtitle', component: 'text' 
+              },
+              { 
+                name: 'text', label: 'Text', component: 'textarea' 
+              },
+              {
+                label: 'Image',
+                name: 'image',
+                component: 'image',
+                parse: media => `/static/${media.filename}`,
+                uploadDir: () => '/static/',
+                previewSrc: fullSrc => fullSrc.replace('', ''),
+              }
+            ]
+          },
         ],
     }
 
@@ -24,8 +74,8 @@ export default function PortfolioProject({ file }) {
       <Layout>
         <section className="dark-bg">
           <div className="content-wrapper" className={styles.textWrapper}>
-            <h1>Project: {data.title}</h1>
-            <h3>{data.subtitle}</h3>
+            <h1>Project: {data.name}</h1>
+            <h3>{data.short_description}</h3>
           </div>
         </section>
       </Layout>
@@ -34,7 +84,6 @@ export default function PortfolioProject({ file }) {
   
 export async function getStaticProps({preview,previewData, params}) {
 
-    console.log("testi test", preview,previewData, params)
     if (preview) {
       return getGithubPreviewProps({
         ...previewData,

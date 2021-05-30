@@ -92,7 +92,7 @@ p{
 .btn{
   display: inline-table;
   color: #FAFAFA;
-  border: 2px solid $primary-text;
+  border: 1.5px solid $primary-text;
   border-radius: 30px;
   padding: 12px 30px;
   font-size: 0.875rem;
@@ -100,7 +100,7 @@ p{
   &:hover{
     background: transparent linear-gradient(108deg, $primary-brand-light 0%, $primary-brand 100%);
     border: 0;
-    padding: 14px 32px;
+    padding: 13px 31px;
     color: $primary-brand-dark;
   }
   &.dark{
@@ -109,6 +109,52 @@ p{
     &:hover{
       color: $primary-title;
       background: $primary-brand-dark;
+    }
+  }
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .row{
+    display: grid;
+    column-gap: 30px;
+    &.two{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  input, textarea{
+    width: 100%;
+    background-color: transparent;
+    padding: 15px 20px;
+    border: 1px solid #3C4047;
+    border-radius: 6px;
+    color: #BABABA;
+    outline: 0;
+    &::placeholder{
+      color: #BABABA
+    }
+    &:focus{
+      border-color: #D6EFC7;
+    }
+  }
+  label{
+    display: none;
+  }
+  button{
+    background: transparent;
+    border: 1px solid #86919D;
+    border-radius: 30px;
+    color: #FAFAFA;
+    padding: 12px 30px;
+    width: fit-content;
+    cursor: pointer;
+    &:hover{
+      background: transparent linear-gradient(108deg, $primary-brand-light 0%, $primary-brand 100%);
+      border: 0;
+      padding: 13px 31px;
+      color: $primary-brand-dark;
     }
   }
 }

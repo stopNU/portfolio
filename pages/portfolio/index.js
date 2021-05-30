@@ -3,7 +3,7 @@ import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import { useJsonForm } from 'next-tinacms-json'
 import BlogPostCreatorPlugin from '../../plugins/BlogPostCreator'
-import { getAllProjectSlugs } from '../../lib/projects'
+//import { getAllProjectSlugs } from '../../lib/projects'
 
 import Layout from '../../components/layout'
 import styles from '../../styles/Portfolio.module.scss'
@@ -38,71 +38,53 @@ export default function Portfolio({ file }) {
   usePlugin(BlogPostCreatorPlugin)
   useGithubToolbarPlugins()
 
+  const paths = file.api
   console.log("file", file)
-  const paths = file.paths
-  console.log("paths", paths)
-
   return (
     <Layout>
-    <section className="dark-bg">
-      <div className="content-wrapper">
-
-       <h2 className={styles.title}>Projects: (manual)</h2>
-          {data.projects.map((value, index) => {
-              return (
-              <div key={index}>
-                <Link href={`/portfolio/${encodeURIComponent(value.slug)}`}>
-                  <a className={styles.link}>{value.name}</a>
-                </Link>
-              </div>
-              )
-          })}
-
+      <section className="dark-bg">
         
-<br></br>
-      <h2 className={styles.title}>Projects: (auto)</h2>
-          {paths.map((value, index) => {
-            console.log("value", value)
-              return (
-                <Link key={index} href={`/portfolio/${encodeURIComponent(value.params.slug)}`}>
-                  <a className={styles.link}>{<p>{value.params.slug}</p>}</a>
-                </Link>
-              )
-          })}
-        
-          </div>
+        <div className="content-wrapper">
+
+          <h2 className={styles.title}>Projects: (auto)</h2>
+              {paths.map((value, index) => {
+                  return (
+                    <div key={index}>
+                      <p>{value.name}</p>
+                      <Link href={`/portfolio/${encodeURIComponent(value.slug)}`}>
+                        <a className={styles.link}>{<p>{value.slug}</p>}</a>
+                      </Link>
+                    </div>
+                  )
+              })}
           
+        </div>
+            
       </section>
-      </Layout>
+    </Layout>
   )    
 }
 
-/*export async function getStaticProps() {
-  const content = await import(`../../content/portfolio.json`)
-
-  return {
-    props: {
-      jsonFile: {
-        fileRelativePath: `/content/portfolio.json`,
-        data: content.default,
-      },
-    },
-  }
-}*/
-
 export async function getStaticProps({preview,previewData}) {
-  const paths = await getAllProjectSlugs()
-  console.log("log", paths)
+  //const paths = await getAllProjectSlugs()
+  const todos = await fetch(
+    `${process.env.NEXTAUTH_URL}/api/projects`
+  ).then((response) => {
+    console.log("response", response)
+    return response.json()
+  });
+
+  
   if (preview) {
     const data = await getGithubPreviewProps({
       ...previewData,
       fileRelativePath: 'content/portfolio.json',
       parse: parseJson,
     }).then((e) => {
-      e.props.file.paths = paths
+      //e.props.file.paths = paths
+      e.props.file.api = todos
       return e
     })
-    console.log("data", data)
     return data
   }
   return {
@@ -113,7 +95,8 @@ export async function getStaticProps({preview,previewData}) {
       file: {
         fileRelativePath: 'content/portfolio.json',
         data: (await import('../../content/portfolio.json')).default,
-        paths: paths
+        //paths: paths,
+        api: todos
       },
     },
   }
