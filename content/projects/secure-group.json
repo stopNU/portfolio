@@ -2,11 +2,12 @@
   "name": "Secure Group",
   "short_description": "Company wikipedia developed with MediaWiki.",
   "slug": "secure-group",
-  "thumbnail": "/static/portfolio-cover-img-securegroupwiki-desk.png",
+  "thumbnail": "/static/portfolio-cover-img-securegroup-desk.png",
   "content": {
     "title": "Secure Group",
     "subtitle": "International provider of solutions for encrypted communications",
     "hero_image": "/static/secure-group-header.jpg",
-    "text": "text?"
+    "text": "text?",
+    "tags": []
   }
 }
