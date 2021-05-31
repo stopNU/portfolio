@@ -1,1 +1,15 @@
-{"name":"TransWorld","short_description":"New website for the South African branch of TransWorld. Built as a static site with Vue (NuxtJS).","slug":"transworld","thumbnail":"/static/portfolio-cover-img-transworld-desk.png"}
+{
+    "name": "TransWorld",
+    "short_description": "New website for the South African branch of TransWorld. Built as a static site with Vue (NuxtJS).",
+    "slug": "transworld",
+    "thumbnail": "/static/portfolio-cover-img-transworld-desk.png",
+    "content": {
+      "title": "",
+      "subtitle": "",
+      "hero_image": "/static/secure-group-header.jpg",
+      "services": [],
+      "description": "Website developed with VueJS using the NuxtJS framework to achieve Server-side rendering (SSR) since SEO was a top priority for the client. Setup using Forestry CMS for data storage.",
+      "image": "/static/temp-sg-image.PNG",
+      "website_url": "https://securegroup.safe-host.net/"
+    }
+  }

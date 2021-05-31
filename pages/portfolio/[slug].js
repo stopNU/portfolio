@@ -95,6 +95,7 @@ export default function PortfolioProject({ file }) {
     return (
       <Layout>
         <section className={styles.headerWrapper}>
+          {data.content && data.content.hero_image && 
           <Image
             className={styles.image}
             src={data.content.hero_image}
@@ -102,7 +103,7 @@ export default function PortfolioProject({ file }) {
             width={1900}
             height={480}
             layout="responsive"
-          />
+          />}
         </section>
 
         <Content data={data.content} />
