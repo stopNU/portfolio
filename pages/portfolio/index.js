@@ -8,10 +8,14 @@ import BlogPostCreatorPlugin from '../../plugins/BlogPostCreator'
 import Layout from '../../components/layout'
 import styles from '../../styles/Portfolio.module.scss'
 import PortfolioItem from '../../components/shared/portfolio-item'
+import Contact from '../../components/shared/contact'
+import {contact, banner} from '../../content/home.json'
+import Banner from '../../components/shared/banner'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Portfolio({ file }) {
+  console.log('Contact', contact)
   const formOptions = {
     label: 'Portfolio',
     fields: [
@@ -41,7 +45,6 @@ export default function Portfolio({ file }) {
   return (
     <Layout>
       <section className="dark-bg">
-          
         <section className={styles.headerWrapper}>
           <div className="inner-wrapper">
             <div className="content-wrapper">
@@ -63,9 +66,9 @@ export default function Portfolio({ file }) {
             </div>
           </div>
         </section>
-
-          
       </section>
+      <Contact data={contact} />
+      <Banner data={banner} />
     </Layout>
   )    
 }

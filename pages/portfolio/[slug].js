@@ -2,9 +2,14 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import { getAllProjectSlugs } from '../../lib/projects'
+import Image from 'next/image'
 
 import Layout from '../../components/layout'
-import styles from '../../styles/Portfolio.module.scss'
+import styles from '../../styles/PortfolioSlug.module.scss'
+import Content from '../../components/portfolio/content'
+import Contact from '../../components/shared/contact'
+import {contact, banner} from '../../content/home.json'
+import Banner from '../../components/shared/banner'
 
 export default function PortfolioProject({ file }) {
     const formOptions = {
@@ -44,22 +49,39 @@ export default function PortfolioProject({ file }) {
             label: 'Content',
             component: 'group',
             fields: [
+              {
+                label: 'Hero image',
+                name: 'hero_image',
+                component: 'image',
+                parse: media => `/static/${media.filename}`,
+                uploadDir: () => '/static/',
+                previewSrc: fullSrc => fullSrc.replace('', ''),
+              },
               { 
                 name: 'title', label: 'Title', component: 'text' 
               },
               { 
-                name: 'subtitle', label: 'Subtitle', component: 'text' 
+                name: 'website_url', label: 'Website URL', component: 'text' 
               },
               { 
-                name: 'text', label: 'Text', component: 'textarea' 
+                name: 'description', label: 'Description', component: 'textarea' 
               },
               {
-                label: 'Image',
+                label: 'Image (content)',
                 name: 'image',
                 component: 'image',
                 parse: media => `/static/${media.filename}`,
                 uploadDir: () => '/static/',
                 previewSrc: fullSrc => fullSrc.replace('', ''),
+              },
+              {
+                label: 'Services list',
+                name: 'services',
+                component: 'list',
+                defaultItem: 'VueJS',
+                field: {
+                  component: 'text',
+                }
               }
             ]
           },
@@ -72,12 +94,21 @@ export default function PortfolioProject({ file }) {
 
     return (
       <Layout>
-        <section className="dark-bg">
-          <div className="content-wrapper" className={styles.textWrapper}>
-            <h1>Project: {data.name}</h1>
-            <h3>{data.short_description}</h3>
-          </div>
+        <section className={styles.headerWrapper}>
+          <Image
+            className={styles.image}
+            src={data.content.hero_image}
+            alt="Picture of the author"
+            width={1900}
+            height={480}
+            layout="responsive"
+          />
         </section>
+
+        <Content data={data.content} />
+
+        <Contact data={contact} />
+        <Banner data={banner} />
       </Layout>
     )
 }

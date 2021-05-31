@@ -6,7 +6,7 @@ export default function Skillset(props) {
         <section className="dark-bg padding">
             <div className="inner-wrapper">
                 <div className="content-wrapper">
-                    <div className="section-header">
+                    <div className="section-header big-margin">
                         <h2 className="title">{props.data.title}</h2>
                         <div className="border"></div>
                     </div> 

@@ -10,7 +10,7 @@ import Header from '../components/homepage/header'
 import Portfolio from '../components/homepage/portfolio'
 import About from '../components/homepage/about'
 import SkillSet from '../components/homepage/skillset'
-import Contact from '../components/homepage/contact'
+import Contact from '../components/shared/contact'
 import Banner from '../components/shared/banner'
 
 

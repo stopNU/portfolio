@@ -78,7 +78,10 @@ p{
 
 .section-header{
   display: flex;
-  margin-bottom: 95px;
+  margin-bottom: 30px;
+  &.big-margin{
+    margin-bottom: 90px;
+  }
   .title{
       color: $primary-brand-light;
       font-size: 3rem;
@@ -100,6 +103,7 @@ p{
   padding: 12px 30px;
   font-size: 0.875rem;
   width: fit-content;
+  cursor: pointer;
   &:hover{
     background: transparent linear-gradient(108deg, $primary-brand-light 0%, $primary-brand 100%);
     border: 0;
