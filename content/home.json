@@ -43,7 +43,7 @@
     "text": "Experienced developer working with both big and small companies. Skilled in both developing inside and with CMS' and front-end frameworks."
   },
   "about": {
-    "title": "A little about Jaxov",
+    "title": "A little about me",
     "image": "/static/download.png",
     "text": "After multiple years working as a front-end and web developer for big and small companies, I moved to a freelance role to be location free. I am hardworking, reliable and honest, always strive to deliver above expectations and give you the assurance your site, brand etc. is in good hands."
   },
@@ -56,7 +56,7 @@
   },
   "portfolio": {
     "title": "My Portfolio",
-    "text": "My portfolio spans both minor and bigger sites developed primarily as static sites with NuxtJS/NextJS and/or (headless) WordPress sites (read about the benefits of a static site <a href=\"https://www.contentstack.com/blog/all-about-headless/static-site-generator-gatsby-and-contentstack/\">here</a>). Take a look and reach out if you want to work together.",
+    "text": "My portfolio spans both minor and bigger sites developed primarily as static sites with NuxtJS/NextJS and/or (headless) WordPress sites (read about the benefits of a static site <a target=\"_blank\" href=\"https://www.contentstack.com/blog/all-about-headless/static-site-generator-gatsby-and-contentstack/\">here</a>). Take a look and reach out if you want to work together.",
     "projects": [
       {
         "name": "Secure Group",

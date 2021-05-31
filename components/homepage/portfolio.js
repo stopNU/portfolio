@@ -13,7 +13,7 @@ export default function Portfolio(props) {
                     </div> 
                     
                     <div className={styles.text}>
-                        <p>{props.data.text}</p>
+                        <p dangerouslySetInnerHTML={{__html: props.data.text}}></p>
                         <Link href="/portfolio">
                             <a className='btn'>View all</a>
                         </Link>

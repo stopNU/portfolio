@@ -67,6 +67,9 @@ p{
   margin: 0; 
   line-height: 1.5;
   color: $primary-text;
+  a{
+    color: $primary-brand;
+  }
 }
 
 .brand{
