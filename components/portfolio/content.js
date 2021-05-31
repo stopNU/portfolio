@@ -39,7 +39,7 @@ export default function Content(props) {
                     </div>
 
                     <div className={styles.buttonWrapper}>
-                        <a href={props.data.website_url} target="_blank" className="btn">View Website</a>
+                        <a href={props.data.website_url} rel="noopener" target="_blank" className="btn">View Website</a>
                     </div>
                     
                 </div>
