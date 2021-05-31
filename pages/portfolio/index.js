@@ -30,30 +30,41 @@ export default function Portfolio({ file }) {
  
 
   // Create the Form
-  const [dataFile, form] = useGithubJsonForm(file, formOptions)
+  const [pageData, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   usePlugin(BlogPostCreatorPlugin)
   useGithubToolbarPlugins()
 
   if (error) return <div>failed to load</div>
   if (!data) return <div>loading...</div>
-  console.log("projects", data)
 
   return (
     <Layout>
       <section className="dark-bg">
-        
-        <div className="content-wrapper">
-        <h2 className={styles.title}>Projects: (auto)</h2>
-              {data.map((value, index) => {
-                  return (
-                    <PortfolioItem key={index} data={value} />
-                  )
-              })}
-        
           
-        </div>
-            
+        <section className={styles.headerWrapper}>
+          <div className="inner-wrapper">
+            <div className="content-wrapper">
+              <h1 className={styles.title}>{pageData.title}</h1>
+            </div>
+          </div>
+        </section>
+
+        <section className="padding">
+          <div className="inner-wrapper">
+            <div className="content-wrapper">
+              <div className={styles.boxes}>
+                {data.map((value, index) => {
+                    return (
+                      <PortfolioItem key={index} data={value} />
+                    )
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+          
       </section>
     </Layout>
   )    

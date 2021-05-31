@@ -3,7 +3,6 @@ import Link from 'next/link'
 import PortfolioItem from '../shared/portfolio-item'
 
 export default function Portfolio(props) {
-    console.log("portfolio", props)
     return (
         <section className="padding">
             <div className="inner-wrapper">
@@ -21,11 +20,11 @@ export default function Portfolio(props) {
                     </div>
 
                     <div className={styles.boxes}>
-                    {props.data.projects.map((value, index) => {
-                        return (
-                            <PortfolioItem key={index} data={value} />
-                        )
-                    })}
+                        {props.data.projects.map((value, index) => {
+                            return (
+                                <PortfolioItem key={index} data={value} />
+                            )
+                        })}
                     </div>
                 </div>
             </div>

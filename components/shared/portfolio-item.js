@@ -4,7 +4,6 @@ import styles from './styles/portfolio-item.module.scss'
 
 
 export default function PortfolioItem(props) {
-    console.log("portfolio item", props)
     return (
         <div className={styles.box}>             
             {props.data.thumbnail &&
@@ -21,7 +20,7 @@ export default function PortfolioItem(props) {
                 <p className={styles.title}>{props.data.name}</p>
                 <p className={styles.desc}>{props.data.short_description}</p>
             </div>
-            <Link href={`${props.data.slug}`}>
+            <Link href={`/portfolio/${props.data.slug}`}>
                 <a className={styles.link}>View Project</a>
             </Link>
         </div>
