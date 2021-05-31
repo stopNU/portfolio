@@ -9,7 +9,9 @@
     "hero_image": "/static/twa-hero.jpg",
     "services": [
       "Website Development",
-      "Responsive"
+      "Responsive",
+      "Static Site",
+      "VueJS"
     ],
     "description": "Static website developed with VueJS using the NuxtJS framework to achieve best performance results.",
     "image": "/static/temp-sg-image.PNG",
