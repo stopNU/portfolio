@@ -1,12 +1,3 @@
 {
-  "projects": [
-    {
-      "name": "Test",
-      "slug": "test"
-    },
-    {
-      "name": "Second Test",
-      "slug": "second-test"
-    }
-  ]
+  "title": "Projects"
 }

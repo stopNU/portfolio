@@ -61,20 +61,20 @@
       {
         "name": "Secure Group",
         "short_description": "Development of new company website using Vue (NuxtJS) and Forestry CMS.",
-        "slug": "/portolio/secure-group",
+        "slug": "secure-group",
         "thumbnail": "/static/portfolio-cover-img-securegroup-desk.png"
       },
       {
         "thumbnail": "/static/portfolio-cover-img-securegroupwiki-desk.png",
         "name": "Secure Group Wiki",
         "short_description": "Company wikipedia developed with MediaWiki.",
-        "slug": "/portfolio/secure-group-wiki"
+        "slug": "secure-group-wiki"
       },
       {
         "thumbnail": "/static/portfolio-cover-img-transworld-desk.png",
         "name": "TransWorld",
         "short_description": "New website for the South African branch of TransWorld. Built as a static site with Vue (NuxtJS).",
-        "slug": "/portfolio/transworld"
+        "slug": "transworld"
       }
     ]
   },
