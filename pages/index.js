@@ -61,17 +61,17 @@ export default function Home({ file }) {
             component: 'group-list',
             description: 'Highlighted projects',
             fields: [
-                { name: 'title', label: 'Title', component: 'text' },
+                { name: 'name', label: 'Name', component: 'text' },
                 {
-                  name: 'description',
+                  name: 'short_description',
                   component: 'textarea',
-                  label: 'Description',
+                  label: 'Short description',
                   description: 'Enter the description here',
                 },
-                { name: 'url', label: 'URL', component: 'text' },
+                { name: 'slug', label: 'Slug', component: 'text' },
                 {
-                  label: 'Image',
-                  name: 'image',
+                  label: 'Thumbnail',
+                  name: 'thumbnail',
                   component: 'image',
                   parse: media => `/static/${media.filename}`,
                   uploadDir: () => '/static/',

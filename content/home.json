@@ -59,22 +59,22 @@
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus ut faucibus pulvinar elementum integer. Hendrerit dolor magna eget est lorem ipsum dolor sit.",
     "projects": [
       {
-        "title": "Secure Group",
-        "description": "Development of new company website using Vue (NuxtJS) and Forestry CMS.",
-        "url": "/portolio/secure-group",
-        "image": "/static/portfolio-cover-img-securegroup-desk.png"
+        "name": "Secure Group",
+        "short_description": "Development of new company website using Vue (NuxtJS) and Forestry CMS.",
+        "slug": "/portolio/secure-group",
+        "thumbnail": "/static/portfolio-cover-img-securegroup-desk.png"
       },
       {
-        "image": "/static/portfolio-cover-img-securegroupwiki-desk.png",
-        "title": "Secure Group Wiki",
-        "description": "Company wikipedia developed with MediaWiki.",
-        "url": "/portfolio/secure-group-wiki"
+        "thumbnail": "/static/portfolio-cover-img-securegroupwiki-desk.png",
+        "name": "Secure Group Wiki",
+        "short_description": "Company wikipedia developed with MediaWiki.",
+        "slug": "/portfolio/secure-group-wiki"
       },
       {
-        "image": "/static/portfolio-cover-img-transworld-desk.png",
-        "title": "TransWorld",
-        "description": "New website for the South African branch of TransWorld. Built as a static site with Vue (NuxtJS).",
-        "url": "/portfolio/transworld"
+        "thumbnail": "/static/portfolio-cover-img-transworld-desk.png",
+        "name": "TransWorld",
+        "short_description": "New website for the South African branch of TransWorld. Built as a static site with Vue (NuxtJS).",
+        "slug": "/portfolio/transworld"
       }
     ]
   },

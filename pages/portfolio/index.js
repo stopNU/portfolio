@@ -1,62 +1,56 @@
+import useSWR from 'swr'
+import { useRouter } from 'next/router'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
-import { useJsonForm } from 'next-tinacms-json'
 import BlogPostCreatorPlugin from '../../plugins/BlogPostCreator'
-//import { getAllProjectSlugs } from '../../lib/projects'
 
 import Layout from '../../components/layout'
 import styles from '../../styles/Portfolio.module.scss'
-import Link from 'next/link'
+import PortfolioItem from '../../components/shared/portfolio-item'
 
+const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Portfolio({ file }) {
   const formOptions = {
     label: 'Portfolio',
     fields: [
       { 
-        name: 'projects', 
-        label: 'Projects',
-        component: 'group-list',
-        description: '',
-        fields: [
-          { 
-            name: 'name', label: 'Name', component: 'text' 
-          },
-          { 
-            name: 'slug',  label: 'Slug', component: 'text' 
-          },
-        ] 
+        name: 'title', label: 'Title', component: 'text' 
+      },
+      { 
+        name: 'subtitle', label: 'Subtitle', component: 'text' 
       }
     ],
   }
 
+  const router = useRouter()
+  let { data, error } = useSWR(`/api/projects`, fetcher)
+
+ 
 
   // Create the Form
-  const [data, form] = useGithubJsonForm(file, formOptions)
+  const [dataFile, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   usePlugin(BlogPostCreatorPlugin)
   useGithubToolbarPlugins()
 
-  const paths = file.api
-  console.log("file", file)
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+  console.log("projects", data)
+
   return (
     <Layout>
       <section className="dark-bg">
         
         <div className="content-wrapper">
-
-          <h2 className={styles.title}>Projects: (auto)</h2>
-              {paths.map((value, index) => {
+        <h2 className={styles.title}>Projects: (auto)</h2>
+              {data.map((value, index) => {
                   return (
-                    <div key={index}>
-                      <p>{value.name}</p>
-                      <Link href={`/portfolio/${encodeURIComponent(value.slug)}`}>
-                        <a className={styles.link}>{<p>{value.slug}</p>}</a>
-                      </Link>
-                    </div>
+                    <PortfolioItem key={index} data={value} />
                   )
               })}
+        
           
         </div>
             
@@ -68,13 +62,13 @@ export default function Portfolio({ file }) {
 export async function getStaticProps({preview,previewData}) {
   //const paths = await getAllProjectSlugs()
 
-  const projects = []
+  /*let projects = []
   try {
     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/projects`)
     projects = await res.json()
   } catch(err) {
     console.error(err);
-  }
+  }*/
 
   
   if (preview) {
@@ -84,7 +78,6 @@ export async function getStaticProps({preview,previewData}) {
       parse: parseJson,
     }).then((e) => {
       //e.props.file.paths = paths
-      e.props.file.api = projects
       return e
     })
     return data
@@ -98,7 +91,6 @@ export async function getStaticProps({preview,previewData}) {
         fileRelativePath: 'content/portfolio.json',
         data: (await import('../../content/portfolio.json')).default,
         //paths: paths,
-        api: projects
       },
     },
   }

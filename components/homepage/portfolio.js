@@ -1,8 +1,9 @@
 import styles from './styles/portfolio.module.scss'
 import Link from 'next/link'
-import Image from 'next/image'
+import PortfolioItem from '../shared/portfolio-item'
 
 export default function Portfolio(props) {
+    console.log("portfolio", props)
     return (
         <section className="padding">
             <div className="inner-wrapper">
@@ -22,27 +23,7 @@ export default function Portfolio(props) {
                     <div className={styles.boxes}>
                     {props.data.projects.map((value, index) => {
                         return (
-                            <div key={index} className={styles.box}>
-                                
-                               
-                                    {value.image &&
-                                    <div className={styles.imageWrapper}><Image
-                                        className={styles.test}
-                                        src={value.image}
-                                        alt={'Screenshot of ' + value.title}
-                                        width={370}
-                                        height={230}
-                                        layout="fixed"
-                                    /></div>}
-                                    <div>
-                                        <p className={styles.title}>{value.title}</p>
-                                        <p className={styles.desc}>{value.description}</p>
-                                    </div>
-                                    <Link href={`${value.url}`}>
-                                        <a className={styles.link}>View Project</a>
-                                    </Link>
-                                </div>
-                           
+                            <PortfolioItem key={index} data={value} />
                         )
                     })}
                     </div>

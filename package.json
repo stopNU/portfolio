@@ -19,6 +19,7 @@
     "react-tinacms-github": "^0.38.0",
     "sass": "^1.32.8",
     "styled-components": "^5.2.1",
+    "swr": "^0.5.6",
     "tinacms": "^0.39.0"
   },
   "devDependencies": {
