@@ -5,6 +5,8 @@
   "thumbnail": "/static/portfolio-cover-img-securegroupwiki-desk.png",
   "content": {
     "title": "Secure Group",
-    "subtitle": "International provider of solutions for encrypted communications"
+    "subtitle": "International provider of solutions for encrypted communications",
+    "hero_image": "/static/secure-group-header.jpg",
+    "text": "text?"
   }
 }
