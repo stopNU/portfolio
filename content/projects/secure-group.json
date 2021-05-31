@@ -8,6 +8,13 @@
     "subtitle": "International provider of solutions for encrypted communications",
     "hero_image": "/static/secure-group-header.jpg",
     "text": "text?",
-    "tags": []
+    "tags": [],
+    "services": [
+      "Website Development",
+      "SEO",
+      "CMS",
+      "Responsive"
+    ],
+    "description": "Website developed with VueJS using the NuxtJS framework to achieve Server-side rendering (SSR) since SEO was a top priority for the client. Setup using Forestry CMS for data storage."
   }
 }
