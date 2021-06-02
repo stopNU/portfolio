@@ -56,7 +56,7 @@
   },
   "portfolio": {
     "title": "My Portfolio",
-    "text": "My portfolio spans both minor and bigger sites developed primarily as static sites with NuxtJS/NextJS and/or (headless) WordPress sites (read about the benefits of a static site <a target=\"_blank\" href=\"https://www.contentstack.com/blog/all-about-headless/static-site-generator-gatsby-and-contentstack/\">here</a>). Take a look and reach out if you want to work together.",
+    "text": "My portfolio spans both minor and bigger sites developed primarily as static sites with NuxtJS/NextJS and/or (headless) WordPress sites (read about the <a rel=\"noopener\" target=\"_blank\" href=\"https://www.contentstack.com/blog/all-about-headless/static-site-generator-gatsby-and-contentstack/\">benefits of a static site here</a>). Take a look and reach out if you want to work together.",
     "projects": [
       {
         "name": "Secure Group",
