@@ -103,6 +103,7 @@ export default function PortfolioProject({ file }) {
             width={1900}
             height={480}
             layout="responsive"
+            priority
           />}
         </section>
 

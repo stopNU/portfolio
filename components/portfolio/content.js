@@ -32,8 +32,8 @@ export default function Content(props) {
                             className={styles.image}
                             src={props.data.image}
                             alt="Picture of the author"
-                            width={1000}
-                            height={700}
+                            width={1194}
+                            height={766}
                             layout="responsive"
                         />
                     </div>

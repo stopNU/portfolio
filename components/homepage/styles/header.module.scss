@@ -6,8 +6,9 @@
 .content{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
     column-gap: 340px;
-    padding-top: 260px;
+    padding: 200px 0 120px;
 }
 
 .textWrapper{

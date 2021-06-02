@@ -15,8 +15,9 @@ export default function About(props) {
                             className={styles.image}
                             src={props.data.image}
                             alt="Picture of the guy"
-                            width={200}
-                            height={250}
+                            width={448}
+                            height={507}
+                            layout="responsive"
                         />
                     </div> 
                 </div>

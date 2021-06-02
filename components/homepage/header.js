@@ -17,8 +17,9 @@ export default function Header(props) {
                                 className={styles.image}
                                 src={props.data.image}
                                 alt="Picture of the guy"
-                                width={400}
-                                height={500}
+                                width={448}
+                                height={507}
+                                priority
                             />
                         </div>
                     </div>

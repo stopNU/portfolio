@@ -5,11 +5,11 @@
     box-shadow: 0px 10px 16px #00000029;
     border-radius: 6px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 90px;
-    padding: 0 50px;
+    align-items: center;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 160px;
+    padding: 30px 50px;
     .textWrapper{
-        margin: 50px 0;
         .title{
             color: $primary-title;
         }
@@ -17,7 +17,6 @@
             margin-top: 20px;
         }
     }
-    .image{}
 }
 
 .bgWrapper{
