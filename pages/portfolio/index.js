@@ -1,4 +1,5 @@
 import useSWR from 'swr'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
@@ -44,16 +45,26 @@ export default function Portfolio({ file }) {
 
   return (
     <Layout>
+      <Head>
+        <title>Portfolio - MT Web - Freelance Web Developer</title>
+        <meta property="og:title" content="Portfolio - MT Web - Freelance Web Developer" key="title" />
+        <meta property="og:description" content="Portfolio of VueJS, WordPress etc. projects developed by Michael Thomsen as freelance web developer" key="description" />
+      </Head>
+
       <section className="dark-bg">
         <section className={styles.headerWrapper}>
           <div className="inner-wrapper">
             <div className="content-wrapper">
-              <h1 className={styles.title}>{pageData.title}</h1>
+              <h5 className={styles.hint}>My Portfolio</h5>
+              <div className="section-header">
+                  <h2 className="title">{pageData.title}</h2>
+                  <div className="border"></div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="padding">
+        <section className={styles.boxesSection}>
           <div className="inner-wrapper">
             <div className="content-wrapper">
               <div className={styles.boxes}>

@@ -3,7 +3,7 @@ import Form from '../shared/form'
 
 export default function Contact(props) {
     return (
-        <section className="padding">
+        <section className="padding" id="contact">
             <div className="inner-wrapper">
                 <div className="content-wrapper">
                     <div className="section-header big-margin">

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Skillset(props) {
     return (
-        <section className="dark-bg padding">
+        <section className="dark-bg padding" id="skills">
             <div className="inner-wrapper">
                 <div className="content-wrapper">
                     <div className="section-header big-margin">

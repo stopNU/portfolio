@@ -7,6 +7,9 @@
     }
 }
 
+.boxesSection{
+    padding: 60px 0 200px;
+}
 .boxes{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -14,3 +17,9 @@
     margin-top: 60px;
 }
 
+.hint{
+    display: block;
+    font-weight: 400;
+    color: $primary-text;
+    margin-bottom: 10px;
+}

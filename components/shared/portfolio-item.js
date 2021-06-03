@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './styles/portfolio-item.module.scss'
+import { MdChevronRight } from 'react-icons/md';
 
 
 export default function PortfolioItem(props) {
@@ -21,7 +22,7 @@ export default function PortfolioItem(props) {
                 <p className={styles.desc}>{props.data.short_description}</p>
             </div>
             <Link href={`/portfolio/${props.data.slug}`}>
-                <a className={styles.link}>View Project</a>
+                <a className={styles.link}>View Project <MdChevronRight /></a>
             </Link>
         </div>
     )    

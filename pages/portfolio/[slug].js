@@ -2,6 +2,7 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import { getAllProjectSlugs } from '../../lib/projects'
+import Head from 'next/head'
 import Image from 'next/image'
 
 import Layout from '../../components/layout'
@@ -94,6 +95,11 @@ export default function PortfolioProject({ file }) {
 
     return (
       <Layout>
+        <Head>
+          <title>{data.name} - MT Web - Freelance Web Developer</title>
+          <meta property="og:title" content={data.name + ' - MT Web - Freelance Web Developer'} key="title" />
+          <meta property="og:description" content={data.short_description} key="description" />
+        </Head>
         <section className={styles.headerWrapper}>
           {data.content && data.content.hero_image && 
           <Image

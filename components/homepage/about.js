@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function About(props) {
     return (
-        <section className={styles.bgWrapper}>
+        <section className={styles.bgWrapper} id="about">
             <div className="inner-wrapper">
                 <div className="content-wrapper">
                     <div className={styles.boxWrapper}>

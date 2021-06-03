@@ -1,27 +1,85 @@
 import { signIn, signOut, useSession } from "next-auth/client"
 import { useCMS } from 'tinacms'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './styles/layout.module.scss'
+import { Link as ScrollLink } from 'react-scroll'
+import { useRouter } from 'next/router'
 
 import data from '../content/home.json'
 
 export default function Layout({ children }) {
     const [session, loading] = useSession()
+    const router = useRouter()
 
     const cms = useCMS()
 
+    const aboutLink = () => {
+        if (router.route == '/') {
+            return (
+            <ScrollLink to="about" smooth={true}>
+                <p className={styles.link}>About</p>
+            </ScrollLink>
+            )
+        } else {
+            return (
+                <Link href="/#about">
+                  <a className={styles.link}>About</a>
+                </Link>
+            )
+        }
+    }
+
+    const skillsLink = () => {
+        if (router.route == '/') {
+            return (
+            <ScrollLink to="skills" smooth={true}>
+                <p className={styles.link}>Skills</p>
+            </ScrollLink>
+            )
+        } else {
+            return (
+                <Link href="/#skills">
+                  <a className={styles.link}>Skills</a>
+                </Link>
+            )
+        }
+    }
+
     return (
         <div>
-            <div className={styles.nav}>
-                <Link href="/">
-                  <a className={styles.link}>Home</a>
-                </Link>
-                <Link href="/portfolio">
-                  <a className={styles.link}>Portfolio</a>
-                </Link>
-            {session && (
-                <EditLink cms={cms} />
-            )}
+            <div className="inner-wrapper">
+                <div className="content-wrapper">
+                    <div className={styles.nav}>
+                        <div className={styles.logo}>
+                            <Link href="/">
+                                <Image
+                                    className={styles.icon}
+                                    src="/static/logo.png"
+                                    alt="MT Web logo"
+                                    width={75}
+                                    height={23}
+                                    layout="fixed"
+                                />
+                            </Link>
+                        </div>
+                        <div className={styles.navItems}>
+                            {aboutLink()}
+                            {skillsLink()}
+                            <Link href="/portfolio">
+                            <a className={styles.link}>Portfolio</a>
+                            </Link>
+                        </div>
+                        <div>
+                            <ScrollLink to="contact" smooth={true}>
+                                <p className={styles.button}>Contact</p>
+                            </ScrollLink>
+                        </div>
+                    {session && (
+                        <EditLink cms={cms} />
+                    )}
+                    </div>
+                </div>
             </div>
             <div className={styles.bodyContainer}>{children}</div>
             <footer className={styles.footer}>
