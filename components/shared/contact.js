@@ -12,7 +12,7 @@ export default function Contact(props) {
                     </div> 
 
                     <div className={styles.content}>
-                        <p>{props.data.text}</p>
+                        <p className={styles.text}>{props.data.text}</p>
                         <Form />
                     </div>
 

@@ -11,6 +11,13 @@
     max-width: 600px;
 }
 
+.contentWrapper{
+    padding: $section-padding-mb 0 0;
+    @media screen and (min-width: $media-tablet) {
+    padding: $section-padding 0 0;
+    }
+}
+
 .imageWrapper{
     background-color: $primary-dark;
     border-radius: 6px;

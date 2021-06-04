@@ -1,5 +1,15 @@
+@import '../../../styles/_variables.scss';
+
 .content{
     display: grid;
+    @media screen and (min-width: $media-mobile) {
     grid-template-columns: 1fr 3fr;
+    }
     column-gap: 100px;
+    .text{
+        margin-bottom: 30px;
+        @media screen and (min-width: $media-mobile) {
+        margin-bottom: 0px;
+        }
+    }
 }

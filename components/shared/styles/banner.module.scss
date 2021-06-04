@@ -7,20 +7,28 @@
 
 .content{
     display: grid;
-    grid-template-columns: 2fr 1fr;
     max-width: $content-wrapper;
-    margin: 0 auto;
+    @media screen and (min-width: $media-tablet) {
+    grid-template-columns: 2fr 1fr;
     column-gap: 400px;
     align-items: center;
+    margin: 0 auto;
+    }    
     .title{
         color: $primary-title-dark;
     }
     .text{
         color: #184D47;
-        margin-top: 10px;
+        margin: 30px 0 30px;
+        @media screen and (min-width: $media-tablet) {
+        margin: 10px 0 0;
+        }
+        
     }
 }
 
 .btnWrapper{
+    @media screen and (min-width: $media-tablet) {
     text-align: right;
+    }
 }

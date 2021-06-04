@@ -1,20 +1,29 @@
 @import '../styles/_variables.scss';
 
 .headerWrapper{
+    padding-top: 90px;
+    @media screen and (min-width: $media-tablet) {
     padding-top: 200px;
+    }
     .title{
         color: $primary-title;
     }
 }
 
 .boxesSection{
+    padding: 0px 0 90px;
+    @media screen and (min-width: $media-tablet) {
     padding: 60px 0 200px;
+    }
 }
 .boxes{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     gap: 30px;
+    margin-top: 30px;
+    @media screen and (min-width: $media-tablet) {
     margin-top: 60px;
+    }
 }
 
 .hint{

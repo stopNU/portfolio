@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Content(props) {
     return (
-        <section className="padding">
+        <section className={styles.contentWrapper}>
             <div className="inner-wrapper">
                 <div className="content-wrapper">
                    

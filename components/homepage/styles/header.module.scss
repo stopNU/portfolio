@@ -4,11 +4,19 @@
     background: transparent linear-gradient(360deg, rgba($primary-dark, 1) 0%, $primary-dark 14%, rgba($secondary-dark, 0.6) 100%);
 }
 .content{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 120px 0 90px;
+    @media screen and (min-width: $media-tablet) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     column-gap: 310px;
     padding: 200px 0 120px;
+    }
+    .imageWrapper{
+        text-align: right;
+    }
 }
 
 .textWrapper{

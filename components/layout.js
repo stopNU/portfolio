@@ -55,10 +55,10 @@ export default function Layout({ children }) {
                             <Link href="/">
                                 <Image
                                     className={styles.icon}
-                                    src="/static/logo.png"
+                                    src="/static/temp-logo.png"
                                     alt="MT Web logo"
                                     width={75}
-                                    height={23}
+                                    height={21}
                                     layout="fixed"
                                 />
                             </Link>
