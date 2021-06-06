@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { signIn, signOut, useSession } from "next-auth/client"
 import { useCMS } from 'tinacms'
 import Link from 'next/link'
@@ -8,11 +9,28 @@ import { useRouter } from 'next/router'
 
 import data from '../content/home.json'
 
+
+
 export default function Layout({ children }) {
     const [session, loading] = useSession()
+    const [isScrolled, setIsScrolled] = useState(false);
     const router = useRouter()
 
     const cms = useCMS()
+
+    const handleScroll = (e) => {
+        //console.log('scroll', e.target.scrollingElement.scrollTop)
+        if(e.target.scrollingElement.scrollTop > 0){    
+            setIsScrolled(true)
+        }
+        else{
+            setIsScrolled(false)
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    });
 
     const aboutLink = () => {
         if (router.route == '/') {
@@ -48,19 +66,21 @@ export default function Layout({ children }) {
 
     return (
         <div>
-            <div className="inner-wrapper">
+            <div className={`${styles.navWrapper} ${isScrolled ? styles.scrolled : ''}`}>
                 <div className="content-wrapper">
                     <div className={styles.nav}>
                         <div className={styles.logo}>
                             <Link href="/">
-                                <Image
-                                    className={styles.icon}
-                                    src="/static/temp-logo.png"
-                                    alt="MT Web logo"
-                                    width={75}
-                                    height={21}
-                                    layout="fixed"
-                                />
+                                <a>
+                                    <Image
+                                        className={styles.icon}
+                                        src="/static/temp-logo.png"
+                                        alt="MT Web logo"
+                                        width={75}
+                                        height={21}
+                                        layout="fixed"
+                                    />
+                                </a>
                             </Link>
                         </div>
                         <div className={styles.navItems}>

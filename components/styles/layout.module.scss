@@ -4,22 +4,36 @@
     background-color: $secondary-dark;
 }
 
+.navWrapper{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    transition: background .5s,border-bottom .5s;
+    z-index: 999;
+    opacity: 1;
+    background: 0 0;
+    border-bottom: 2px solid transparent;
+    &.scrolled{
+        background: $primary-dark;
+        border-bottom: 2px solid $primary-brand;
+    }
+}
 .nav{
-    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 0;
-    height: 50px;
+    height: 70px;
     width: 100%;
     max-width: 1200px;
     background-color: transparent;
     text-align: center;
+    padding: 0 30px;
     @media screen and (min-width: $media-tablet) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
+        justify-content: space-between;
+        
+        gap: 30px;
     }
-    z-index: 999;
-    margin-top: 10px;
     .navItems{
         display: none;
         @media screen and (min-width: $media-tablet) {
@@ -41,9 +55,11 @@
     text-transform: uppercase;
     cursor: pointer;
     font-size: 0.813rem;
+    font-family: $headline-font;
 }
 .button{
     display: none;
+    font-family: $headline-font;
     @media screen and (min-width: $media-tablet) {
         display: block;
         color: #C9C9C9;
