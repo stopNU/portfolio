@@ -108,7 +108,7 @@ export default function PortfolioProject({ file }) {
             alt="Picture of the author"
             width={1900}
             height={480}
-            layout="responsive"
+            
             priority
           />}
         </section>

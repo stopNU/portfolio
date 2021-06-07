@@ -17,7 +17,6 @@ export default function Skillset(props) {
                         return (
                         <div key={index} className={styles.skillset}>
                             <Image
-                                className={styles.icon}
                                 src={value.icon}
                                 alt="Picture of the author"
                                 width={40}

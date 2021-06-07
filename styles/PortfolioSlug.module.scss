@@ -1,4 +1,9 @@
+@import './_variables.scss';
+
 .headerWrapper{
-    margin-top: 70px;
+    padding-top: $header-height-mb;
+    @media screen and (min-width: $media-tablet) {
+    padding-top: $header-height;
+    }
     box-shadow: 2px 0px 6px rgb(0 0 0 / 32%);
 }

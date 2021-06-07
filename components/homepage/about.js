@@ -11,14 +11,16 @@ export default function About(props) {
                             <h4 className={styles.title}>{props.data.title}</h4>
                             <p className={styles.text}>{props.data.text}</p>
                         </div>
-                        <Image
-                            className={styles.image}
-                            src={props.data.image}
-                            alt="Picture of the guy"
-                            width={448}
-                            height={507}
-                            layout="responsive"
-                        />
+                        <div className={styles.imageWrapper}>
+                            <Image
+                                src={props.data.image}
+                                alt="Picture of the guy"
+                                width={448}
+                                height={507}
+                                sizes="(max-width: 1024px) 400px, 200px"
+                                layout="responsive"
+                            />
+                        </div>
                     </div> 
                 </div>
             </div>

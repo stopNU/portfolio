@@ -20,6 +20,12 @@
             margin-top: 20px;
         }
     }
+    .imageWrapper{
+        max-width: 400px;
+        @media screen and (min-width: $media-tablet) {
+        max-width: none;
+        }
+    }
 }
 
 .bgWrapper{

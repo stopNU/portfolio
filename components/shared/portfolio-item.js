@@ -15,7 +15,7 @@ export default function PortfolioItem(props) {
                     alt={'Screenshot of ' + props.data.name}
                     width={370}
                     height={230}
-                    layout="fixed" />
+                    layout="intrinsic" />
             </div>}
             <div>
                 <p className={styles.title}>{props.data.name}</p>

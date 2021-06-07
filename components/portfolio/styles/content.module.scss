@@ -12,7 +12,7 @@
 }
 
 .contentWrapper{
-    padding: $section-padding-mb 0 0;
+    padding: 60px 0 0;
     @media screen and (min-width: $media-tablet) {
     padding: $section-padding 0 0;
     }
@@ -21,19 +21,28 @@
 .imageWrapper{
     background-color: $primary-dark;
     border-radius: 6px;
+    padding: 30px;
+    margin: 20px 0 30px;
+    @media screen and (min-width: $media-mobile) {
     padding: 90px 30px;
-    margin: 30px 0 30px;
+    margin: 30px 0 30px;    
+    }
 }
 
 .services{
     display: flex;
     gap: 15px;
+    margin-top: 20px;
+    @media screen and (min-width: $media-mobile) {
     margin-top: 40px;
+    }
     .service{
         color: $primary-brand-light;
+        @media screen and (min-width: $media-mobile) {
         border: 1px solid $primary-brand-light;
         padding: 10px 18px;
         border-radius: 30px;
+        }
         font-size: 0.8rem;
     }
 }

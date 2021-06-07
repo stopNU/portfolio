@@ -79,6 +79,7 @@ export default function Layout({ children }) {
                                         width={75}
                                         height={21}
                                         layout="fixed"
+                                        priority
                                     />
                                 </a>
                             </Link>

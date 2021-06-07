@@ -3,12 +3,18 @@
 
 .skillset-wrapper{
     display: grid;
+    grid-template-columns: 1fr;
+    @media screen and (min-width: $media-xsmall) {
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    }
     column-gap: 60px;
     row-gap: 80px;
     .skillset{
         display: grid;
+        grid-template-columns: 1fr;
+        @media screen and (min-width: $media-xsmall) {
         grid-template-columns: 40px 1fr;
+        }
         column-gap: 30px;
     }
 }
@@ -19,6 +25,10 @@
     justify-content: space-between;
     .title{
         color: $primary-title;
+        margin-top: 20px;
+        @media screen and (min-width: $media-xsmall) {
+            margin-top: 0px;
+        }
     }
     .description{
         color: $secondary-text;

@@ -18,7 +18,10 @@
 .boxes{
     display: grid;
     //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    @media screen and (min-width: $media-xsmall) {
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    }
     gap: 30px;
     margin-top: 60px;
 }
