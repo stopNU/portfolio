@@ -189,6 +189,7 @@ p{
     color: #FAFAFA;
     padding: 12px 30px;
     width: fit-content;
+    height: fit-content;
     cursor: pointer;
     &:hover{
       background: transparent linear-gradient(108deg, $primary-brand-light 0%, $primary-brand 100%);
