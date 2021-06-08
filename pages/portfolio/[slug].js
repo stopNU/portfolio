@@ -120,7 +120,6 @@ export default function PortfolioProject({ file }) {
         </section>
 
         <Content data={data.content} />
-
         <Contact data={contact} />
         <Banner data={banner} />
       </Layout>
@@ -128,7 +127,6 @@ export default function PortfolioProject({ file }) {
 }
   
 export async function getStaticProps({preview,previewData, params}) {
-
     if (preview) {
       return getGithubPreviewProps({
         ...previewData,

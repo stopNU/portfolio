@@ -98,8 +98,10 @@ p{
 .brand{
   color: $primary-brand;
 }
-.hidden{
-  //visibility: hidden !important;
+.loading{
+  color: #FFF;
+  width: 100%;
+  text-align: center;
 }
 
 .section-header{
