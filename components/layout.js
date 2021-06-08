@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { signIn, signOut, useSession } from "next-auth/client"
+import Head from 'next/head'
 import { useCMS } from 'tinacms'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './styles/layout.module.scss'
 import { Link as ScrollLink } from 'react-scroll'
 import { useRouter } from 'next/router'
-
 import data from '../content/home.json'
 
 
@@ -76,6 +76,9 @@ export default function Layout({ children }) {
 
     return (
         <div>
+            <Head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+            </Head>
             <div className={`${styles.navWrapper} ${isScrolled ? styles.scrolled : ''}`}>
                 <div className="content-wrapper">
                     <div className={styles.nav}>
@@ -122,6 +125,20 @@ export default function Layout({ children }) {
                                 </svg>
                             </div>
 
+
+                        {/* Mobile Menu */}
+                        <div
+                            className={` ${styles.mobileMenuWrapper} ${mobileActive ? styles.open : ''}`}
+                        >
+                            <div className={styles.mobileMenu}>
+                                {aboutLink()}
+                                {skillsLink()}
+                                <Link href="/portfolio" onClick={handleMobileItemClick}>
+                                    <a className={styles.link}>Portfolio</a>
+                                </Link>
+                            </div>
+                        </div>
+                        {/* End of Mobile Menu */}
                             
                         </div>
                     {session && (
@@ -146,23 +163,10 @@ export default function Layout({ children }) {
                     )}
                 </div>
                 <p className={styles.copyright}>{data.copyright}</p>
+                {mobileActive}
             </footer>
 
-            {/* Mobile Menu */}
-            <div
-                className={`${
-                    mobileActive ? '' : 'hidden'
-                } ${styles.mobileMenuWrapper} ${mobileActive ? styles.active : ''}`}
-            >
-                <div className={styles.mobileMenu}>
-                    {aboutLink()}
-                    {skillsLink()}
-                    <Link href="/portfolio" onClick={handleMobileItemClick}>
-                    <a className={styles.link}>Portfolio</a>
-                    </Link>
-                </div>
-            </div>
-            {/* End of Mobile Menu */}
+            
         </div>
     )
 }

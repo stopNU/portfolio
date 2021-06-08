@@ -1,5 +1,4 @@
 import Document, {
-  DocumentContext,
   Html,
   Head,
   Main,
@@ -36,7 +35,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta property="og:site_name" content="MT Web" key="ogsitename" />
           <link rel="icon" href="/favicon2.png" />
           <link rel="preconnect" href="https://fonts.gstatic.com"/>
