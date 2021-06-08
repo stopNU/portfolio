@@ -37,6 +37,9 @@ const BlogPostCreatorPlugin = {
         component: 'date',
         dateFormat: 'MMMM DD YYYY',
         timeFormat: false,
+        validation(title) {
+          if (!title) return "Required."
+        }
       }
     ],
     onSubmit(form, cms) {

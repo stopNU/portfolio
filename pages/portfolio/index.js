@@ -68,7 +68,9 @@ export default function Portfolio({ file }) {
           <div className="inner-wrapper">
             <div className="content-wrapper">
               <div className={styles.boxes}>
-                {data.map((value, index) => {
+                {data
+                .sort((a, b) => a.finished_at < b.finished_at ? 1:-1)
+                .map((value, index) => {
                     return (
                       <PortfolioItem key={index} data={value} />
                     )

@@ -10,8 +10,6 @@ import { useRouter } from 'next/router'
 import data from '../content/home.json'
 
 
-
-
 export default function Layout({ children }) {
     const [session, loading] = useSession()
     const [isScrolled, setIsScrolled] = useState(false);
