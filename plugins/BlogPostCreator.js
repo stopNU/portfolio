@@ -30,6 +30,13 @@ const BlogPostCreatorPlugin = {
         parse: media => `/static/${media.filename}`,
         uploadDir: () => '/static/',
         previewSrc: fullSrc => fullSrc.replace('', ''),
+      },
+      {
+        name: 'finished_at',
+        label: 'Finished At',
+        component: 'date',
+        dateFormat: 'MMMM DD YYYY',
+        timeFormat: false,
       }
     ],
     onSubmit(form, cms) {

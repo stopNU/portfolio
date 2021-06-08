@@ -46,6 +46,13 @@ export default function PortfolioProject({ file }) {
             previewSrc: fullSrc => fullSrc.replace('', ''),
           },
           {
+            name: 'finished_at',
+            label: 'Finished At',
+            component: 'date',
+            dateFormat: 'MMMM DD YYYY',
+            timeFormat: false,
+          },
+          {
             name: 'content',
             label: 'Content',
             component: 'group',
