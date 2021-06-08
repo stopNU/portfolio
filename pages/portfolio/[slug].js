@@ -2,6 +2,7 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import { getAllProjectSlugs } from '../../lib/projects'
+import useSWR from 'swr'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -12,7 +13,22 @@ import Contact from '../../components/shared/contact'
 import {contact, banner} from '../../content/home.json'
 import Banner from '../../components/shared/banner'
 
-export default function PortfolioProject({ file }) {
+const fetcher = url => fetch(url).then(r => r.json())
+
+async function getNextProject() {
+  //console.log('projects', projects)
+  let slugArray = []
+  //const { data: projects, error } = useSWR('/api/projects', fetcher)
+  //console.log('projects', projects)
+  //if(projects != undefined){
+    //slugArray =  projects.map(a => a.slug)
+  //}
+  //console.log("RETURN")
+  return ['slugArray']
+}
+
+export default function PortfolioProject({ file, ...props }) {
+    console.log("parths", props, file)
     const formOptions = {
         label: 'Project Page',
         fields: [
@@ -90,6 +106,13 @@ export default function PortfolioProject({ file }) {
                 field: {
                   component: 'text',
                 }
+              },
+              {
+                component: 'select',
+                name: 'next-project',
+                label: 'Next Project',
+                description: 'Select a project',
+                options: ['gallo'],
               }
             ]
           },
@@ -99,6 +122,7 @@ export default function PortfolioProject({ file }) {
     const [data, form] = useGithubJsonForm(file, formOptions)
     usePlugin(form)
     useGithubToolbarPlugins()
+    
 
     return (
       <Layout>
@@ -127,25 +151,31 @@ export default function PortfolioProject({ file }) {
 }
   
 export async function getStaticProps({preview,previewData, params}) {
-    if (preview) {
-      return getGithubPreviewProps({
-        ...previewData,
-        fileRelativePath: `content/projects/${params.slug}.json`,
-        parse: parseJson,
-      })
-    }
-    return {
-      props: {
-        sourceProvider: null,
-        error: null,
-        preview: false,
-        file: {
-          fileRelativePath: `content/projects/${params.slug}.json`,
-          data: (await import(`../../content/projects/${params.slug}.json`)).default,
-        },
-      },
-    }
+  const paths = await getAllProjectSlugs()
+  console.log('paths', paths)
+
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      paths: ['asd3'],
+      fileRelativePath: `content/projects/${params.slug}.json`,
+      parse: parseJson,
+    })
   }
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      paths: ['asd'],
+      file: {
+        paths: ['asd2'],
+        fileRelativePath: `content/projects/${params.slug}.json`,
+        data2: (await import(`../../content/projects/${params.slug}.json`)).default,
+      },
+    },
+  }
+}
 
 export async function getStaticPaths() {
   const paths = await getAllProjectSlugs()
