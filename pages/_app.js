@@ -10,7 +10,7 @@ import { NextGithubMediaStore } from 'next-tinacms-github'
 import '../styles/_variables.scss'
 import '../styles/globals.scss'
 import BlogPostCreatorPlugin from '../plugins/BlogPostCreator'
-
+import { DateFieldPlugin } from "react-tinacms-date"
 
 function MyApp({ Component, pageProps }) {
   //const [session, loading] = useSession()
@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps }) {
   })
 
   cms.plugins.add(BlogPostCreatorPlugin)
+  cms.plugins.add(DateFieldPlugin)
 
 
   return (
