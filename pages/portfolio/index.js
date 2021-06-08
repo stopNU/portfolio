@@ -16,7 +16,7 @@ import Banner from '../../components/shared/banner'
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Portfolio({ file }) {
-  
+  const router = useRouter()
   const formOptions = {
     label: 'Portfolio',
     fields: [
@@ -29,7 +29,6 @@ export default function Portfolio({ file }) {
     ],
   }
 
-  const router = useRouter()
   let { data, error } = useSWR(`/api/projects`, fetcher)
 
   // Create the Form

@@ -27,8 +27,8 @@ async function getNextProject() {
   return ['slugArray']
 }
 
-export default function PortfolioProject({ file, ...props }) {
-    console.log("parths", props, file)
+export default function PortfolioProject({ file }) {
+    console.log('file', file)
     const formOptions = {
         label: 'Project Page',
         fields: [
@@ -112,7 +112,7 @@ export default function PortfolioProject({ file, ...props }) {
                 name: 'next-project',
                 label: 'Next Project',
                 description: 'Select a project',
-                options: ['gallo'],
+                options: file.paths,
               }
             ]
           },
@@ -151,31 +151,37 @@ export default function PortfolioProject({ file, ...props }) {
 }
   
 export async function getStaticProps({preview,previewData, params}) {
-  const paths = await getAllProjectSlugs()
-  console.log('paths', paths)
+    const paths = await getAllProjectSlugs()
 
-  if (preview) {
-    return getGithubPreviewProps({
-      ...previewData,
-      paths: ['asd3'],
-      fileRelativePath: `content/projects/${params.slug}.json`,
-      parse: parseJson,
-    })
-  }
-  return {
-    props: {
-      sourceProvider: null,
-      error: null,
-      preview: false,
-      paths: ['asd'],
-      file: {
-        paths: ['asd2'],
+    if (preview) {
+      const data = await getGithubPreviewProps({
+        ...previewData,
         fileRelativePath: `content/projects/${params.slug}.json`,
-        data2: (await import(`../../content/projects/${params.slug}.json`)).default,
+        parse: parseJson,
+      }).then((e) => {
+        const slugs = paths.map(e => e.params.slug)
+        e.props.file.paths = slugs
+        return e
+      })
+      return data
+      /*return getGithubPreviewProps({
+        ...previewData,
+        fileRelativePath: `content/projects/${params.slug}.json`,
+        parse: parseJson,
+      })*/
+    }
+    return {
+      props: {
+        sourceProvider: null,
+        error: null,
+        preview: false,
+        file: {
+          fileRelativePath: `content/projects/${params.slug}.json`,
+          data: (await import(`../../content/projects/${params.slug}.json`)).default,
+        },
       },
-    },
+    }
   }
-}
 
 export async function getStaticPaths() {
   const paths = await getAllProjectSlugs()
