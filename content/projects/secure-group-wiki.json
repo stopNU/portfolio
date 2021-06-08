@@ -1,20 +1,20 @@
 {
-    "name": "Secure Group Wiki",
-    "short_description": "Company wikipedia developed with MediaWiki.",
-    "slug": "secure-group-wiki",
-    "thumbnail": "/static/portfolio-cover-img-securegroupwiki-desk.png",
-    "content": {
-      "title": "Secure Group",
-      "subtitle": "International provider of solutions for encrypted communications",
-      "hero_image": "/static/secure-group-header.jpg",
-      "services": [
-        "Website Development",
-        "SEO",
-        "CMS",
-        "Responsive"
-      ],
-      "description": "Website developed with VueJS using the NuxtJS framework to achieve Server-side rendering (SSR) since SEO was a top priority for the client. Setup using Forestry CMS for data storage.",
-      "image": "/static/temp-sg-image.PNG",
-      "website_url": "https://securegroup.safe-host.net/"
-    }
+  "name": "Secure Group Wiki",
+  "short_description": "Company wikipedia developed with MediaWiki.",
+  "slug": "secure-group-wiki",
+  "thumbnail": "/static/portfolio-cover-img-securegroupwiki-desk.png",
+  "content": {
+    "title": "Secure Group Wiki",
+    "subtitle": "International provider of solutions for encrypted communications",
+    "hero_image": "/static/secure-group-header.jpg",
+    "services": [
+      "Website Development",
+      "SEO",
+      "CMS",
+      "Responsive"
+    ],
+    "description": "Website developed with VueJS using the NuxtJS framework to achieve Server-side rendering (SSR) since SEO was a top priority for the client. Setup using Forestry CMS for data storage.",
+    "image": "/static/temp-sg-image.PNG",
+    "website_url": "https://wiki.careers.securegroup.com/index.php?title=Main_Page"
   }
+}
