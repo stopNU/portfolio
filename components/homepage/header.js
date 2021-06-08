@@ -1,5 +1,6 @@
 import styles from './styles/header.module.scss'
 import Image from 'next/image'
+import SocialMedia from '../shared/social-media.js'
 
 export default function Header(props) {
     return (
@@ -11,6 +12,7 @@ export default function Header(props) {
                             <h1 className={styles.title}>{props.data.title}</h1>
                             <h4 className={styles.subtitle}>{props.data.subtitle}</h4>
                             <p className={styles.text}>{props.data.text}</p>
+                            <SocialMedia className={styles.social} />
                         </div> 
                         <div className={styles.imageWrapper}>
                             <Image

@@ -1,0 +1,21 @@
+@import '../../../styles/_variables.scss';
+
+.icon{
+    display: flex;
+    height: fit-content;
+    padding: 7px;
+    border: 1px solid #86919d;
+    border-radius: 30px;
+    svg{
+        width: 24px;
+        height: 24px;
+    }
+    &:hover{
+        border-color: $primary-brand-light;
+    }
+}
+
+.wrapper{
+    display: flex;
+    gap: 15px;
+}

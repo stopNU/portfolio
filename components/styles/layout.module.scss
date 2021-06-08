@@ -8,10 +8,11 @@
     position: fixed;
     width: 100%;
     height: $header-height-mb;
+    padding: 0 30px;
     @media screen and (min-width: $media-tablet) {
     height: $header-height;
     }
-    transition: background .5s,border-bottom .5s;
+    transition: border-bottom .5s;
     z-index: 999;
     opacity: 1;
     background: 0 0;
@@ -31,7 +32,6 @@
     max-width: 1200px;
     background-color: transparent;
     text-align: center;
-    padding: 0 30px;
     @media screen and (min-width: $media-tablet) {
         justify-content: space-between;
         gap: 30px;
@@ -99,6 +99,8 @@
             background: transparent;
             border: 0;
             color: $primary-text;
+            font-family: $paragraphs-font;
+            padding: 0;
             &:hover{
                 text-decoration: underline;
                 cursor: pointer;
@@ -106,3 +108,72 @@
         }
     }
 }
+
+.mobileIcon{
+    width: 24px;
+    position: absolute;
+    right: 30px;
+    top: 14px;
+    @media screen and (min-width: $media-tablet) {
+        display: none;
+    }
+}
+
+.mobileMenuWrapper{
+    
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    animation: example-in .3s 1ms;
+    
+    z-index: 9;
+    transition: all .3s;
+    
+    p, a{
+        color: #FFFFFF;
+        font-weight: 700;
+    }
+    visibility: hidden;
+    &.active{
+        animation: example-out .3s 1ms;
+        visibility: visible;
+       
+        
+        top: 50px;
+    }
+    .mobileMenu{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 9;
+        //top: 50px;
+        gap: 20px;
+        background-color: $primary-brand;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        
+    }
+}
+
+@keyframes example-out {
+0% {
+    transform: translateY(-100%);
+}
+100% {
+    transform: translate(0);
+}
+}
+
+@keyframes example-in {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+    }

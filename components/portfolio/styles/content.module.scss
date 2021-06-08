@@ -8,7 +8,20 @@
 }
 
 .description{
-    max-width: 600px;
+    display: grid;
+    @media screen and (min-width: $media-tablet) {
+    grid-template-columns: 3fr 1fr;
+    column-gap: 240px;
+    }
+    .social{
+        display: flex;
+        
+        margin: 20px 0;
+        @media screen and (min-width: $media-tablet) {
+        margin: 0;
+        justify-content: flex-end;
+        }
+    }
 }
 
 .contentWrapper{
@@ -22,10 +35,10 @@
     background-color: $primary-dark;
     border-radius: 6px;
     padding: 30px;
-    margin: 20px 0 30px;
-    @media screen and (min-width: $media-mobile) {
-    padding: 90px 30px;
+    margin: 20px -30px 30px;
+    @media screen and (min-width: $media-tablet) {
     margin: 30px 0 30px;    
+    padding: 90px 30px;  
     }
 }
 

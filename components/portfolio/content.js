@@ -1,5 +1,5 @@
 import styles from './styles/content.module.scss'
-//import Link from 'next/link'
+import SocialMedia from '../shared/social-media.js'
 import Image from 'next/image'
 
 export default function Content(props) {
@@ -17,12 +17,13 @@ export default function Content(props) {
                     
                     <div className={styles.description}>
                         <p>{props.data.description}</p>
+                        <SocialMedia className={styles.social}/>
                     </div>
 
                     <div className={styles.services}>
                         {props.data.services.map((value, index) => {
                             return (
-                                <div className={styles.service}>{value}</div>
+                                <div className={styles.service} key={index}>{value}</div>
                             )
                         })}
                     </div>

@@ -36,8 +36,11 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Ropa+Sans&display=swap" rel="stylesheet" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta property="og:site_name" content="MT Web" key="ogsitename" />
+          <link rel="icon" href="/favicon2.png" />
+          <link rel="preconnect" href="https://fonts.gstatic.com"/>
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Ropa+Sans&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />

@@ -190,13 +190,10 @@ export default function Home({ file }) {
     <div className={styles.container}>
       <Head>
         <title>MT Web - Freelance Web Developer</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:title" content="MT Web - Freelance Web Developer" key="title" />
         <meta property="og:description" content="Skilled developer working with both big and small companies. Experienced in developing websites in both static websites with frameworks like VueJS and ReactJS and traditional websites with CMS' like WordPress or Joomla." key="description" />
-        <link rel="icon" href="/favicon2.png" />
         <meta property="og:url" content='https://mt-web.tech/' key="ogurl" />
         <meta property="og:image" content={data.header.image} key="ogimage" />
-        <meta property="og:site_name" content="MT Web" key="ogsitename" />
       </Head>
 
       <Layout>

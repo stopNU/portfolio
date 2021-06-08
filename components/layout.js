@@ -14,6 +14,7 @@ import data from '../content/home.json'
 export default function Layout({ children }) {
     const [session, loading] = useSession()
     const [isScrolled, setIsScrolled] = useState(false);
+    const [mobileActive, setMobileActive] = useState(false);
     const router = useRouter()
 
     const cms = useCMS()
@@ -27,6 +28,15 @@ export default function Layout({ children }) {
             setIsScrolled(false)
         }
     }
+
+    const handleClick = () => {
+        setMobileActive(!mobileActive);
+    };
+
+    const handleMobileItemClick = () => {
+        setMobileActive(false);
+    }
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -35,13 +45,13 @@ export default function Layout({ children }) {
     const aboutLink = () => {
         if (router.route == '/') {
             return (
-            <ScrollLink to="about" smooth={true}>
+            <ScrollLink to="about" smooth={true} onClick={handleMobileItemClick}>
                 <p className={styles.link}>About</p>
             </ScrollLink>
             )
         } else {
             return (
-                <Link href="/#about">
+                <Link href="/#about" onClick={handleMobileItemClick}>
                   <a className={styles.link}>About</a>
                 </Link>
             )
@@ -51,13 +61,13 @@ export default function Layout({ children }) {
     const skillsLink = () => {
         if (router.route == '/') {
             return (
-            <ScrollLink to="skills" smooth={true}>
+            <ScrollLink to="skills" smooth={true} onClick={handleMobileItemClick}>
                 <p className={styles.link}>Skills</p>
             </ScrollLink>
             )
         } else {
             return (
-                <Link href="/#skills">
+                <Link href="/#skills" onClick={handleMobileItemClick}>
                   <a className={styles.link}>Skills</a>
                 </Link>
             )
@@ -95,6 +105,24 @@ export default function Layout({ children }) {
                             <ScrollLink to="contact" smooth={true}>
                                 <p className={styles.button}>Contact</p>
                             </ScrollLink>
+                            <div className={styles.mobileIcon} onClick={handleClick}>
+                                <svg
+                                    className='w-6 h-6'
+                                    fill='none'
+                                    stroke='#C9C9C9'
+                                    viewBox='0 0 24 24'
+                                    xmlns='http://www.w3.org/2000/svg'
+                                >
+                                    <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth={2}
+                                    d='M4 6h16M4 12h16M4 18h16'
+                                    />
+                                </svg>
+                            </div>
+
+                            
                         </div>
                     {session && (
                         <EditLink cms={cms} />
@@ -119,6 +147,22 @@ export default function Layout({ children }) {
                 </div>
                 <p className={styles.copyright}>{data.copyright}</p>
             </footer>
+
+            {/* Mobile Menu */}
+            <div
+                className={`${
+                    mobileActive ? '' : 'hidden'
+                } ${styles.mobileMenuWrapper} ${mobileActive ? styles.active : ''}`}
+            >
+                <div className={styles.mobileMenu}>
+                    {aboutLink()}
+                    {skillsLink()}
+                    <Link href="/portfolio" onClick={handleMobileItemClick}>
+                    <a className={styles.link}>Portfolio</a>
+                    </Link>
+                </div>
+            </div>
+            {/* End of Mobile Menu */}
         </div>
     )
 }
