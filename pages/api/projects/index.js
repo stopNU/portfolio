@@ -8,7 +8,7 @@ export default async (req, res) => {
 
   const filenames = fs.readdirSync(dir);
     
-  function getProjectsData(names) {
+  async function getProjectsData(names) {
     return Promise.all(
       names.map(async (name) => {
         const data = await readData(name);
@@ -25,12 +25,10 @@ export default async (req, res) => {
 
   async function getResults() {
     const files = await getProjectsData(filenames);
-    const final = files
-
-    res.statusCode = 200
-    res.json(final);
+    return files
   }
 
-  getResults();
-  
+  const finalData = await getResults()
+  res.statusCode = 200
+  res.json(finalData);
 }
