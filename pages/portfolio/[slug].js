@@ -149,7 +149,7 @@ export default function PortfolioProject({ file }) {
           />}
         </section>
 
-        <Content data={data.content} next={closest} />
+        {data.content && <Content data={data.content} next={closest} />}
         <Contact data={contact} />
         <Banner data={banner} />
       </Layout>
