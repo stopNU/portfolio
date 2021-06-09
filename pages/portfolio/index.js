@@ -5,6 +5,7 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import BlogPostCreatorPlugin from '../../plugins/BlogPostCreator'
+import { VscLoading } from 'react-icons/vsc';
 
 import Layout from '../../components/layout'
 import styles from '../../styles/Portfolio.module.scss'
@@ -38,7 +39,7 @@ export default function Portfolio({ file }) {
   useGithubToolbarPlugins()
 
   if (error) return <div>failed to load</div>
-  if (!data) return <div className="loading">loading...</div>
+  if (!data) return <div className="loading"><VscLoading /></div>
 
   return (
     <Layout>

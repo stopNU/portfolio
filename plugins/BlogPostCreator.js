@@ -51,7 +51,17 @@ const BlogPostCreatorPlugin = {
             "name": form.name,
             "short_description": form.short_description,
             "slug": form.slug,
-            "thumbnail": form.thumbnail
+            "thumbnail": form.thumbnail,
+            "content": {
+              "title": form.name,
+              "hero_image": "",
+              "services": [
+                "Website"
+              ],
+              "description": form.short_description,
+              "image": "",
+              "website_url": ""
+            },
         }
   
       cms.api.github
