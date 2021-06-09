@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mtweb.tech/
+
+# Sitemaps
+Sitemap: https://mtweb.tech/sitemap.xml

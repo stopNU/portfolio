@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap --config custom-next-sitemap.js"
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
@@ -28,6 +29,7 @@
     "tinacms": "^0.39.0"
   },
   "devDependencies": {
-    "hygen-next-tinacms-github": "https://github.com/dwalkr/hygen-next-tinacms-github"
+    "hygen-next-tinacms-github": "https://github.com/dwalkr/hygen-next-tinacms-github",
+    "next-sitemap": "^1.6.105"
   }
 }
