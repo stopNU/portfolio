@@ -54,7 +54,7 @@
 }
 
 .link{
-    color: #C9C9C9;
+    color: $primary-title;
     text-transform: uppercase;
     cursor: pointer;
     font-size: 0.813rem;
@@ -65,17 +65,19 @@
     font-family: $headline-font;
     @media screen and (min-width: $media-tablet) {
         display: block;
-        color: #C9C9C9;
-        border: 1.5px solid #C9C9C9;
+        color: $primary-brand-light;
+        border: 1.5px solid $primary-brand;
         border-radius: 30px;
         padding: 8px 22px 10px;
         font-size: 0.813rem;
         cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 600;
         &:hover{
             background: transparent linear-gradient(108deg, $primary-brand-light 0%, $primary-brand 100%);
             border: 0;
             padding: 10px 23px 12px 24px;
-            color: $primary-brand-dark;
+            color: $primary-title;
         }
     }
 }
