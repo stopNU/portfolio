@@ -1,1 +1,17 @@
-{"name":"CryptoCloud","short_description":"Short","slug":"cryptocloud","content":{"title":"CryptoCloud","hero_image":"","services":["Website"],"description":"Short","image":"","website_url":""}}
+{
+  "name": "CryptoCloud",
+  "short_description": "Short",
+  "slug": "cryptocloud",
+  "content": {
+    "title": "CryptoCloud",
+    "hero_image": "/static/cryptocloud-header (1).jpg",
+    "services": [
+      "Website",
+      "WordPress"
+    ],
+    "description": "BTC TO THE MOON!",
+    "image": "",
+    "website_url": "https://cryptocloud.mobi/"
+  },
+  "finished_at": "2021-04-27T00:00:00Z"
+}
