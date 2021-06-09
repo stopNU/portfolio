@@ -99,7 +99,7 @@ p{
   color: $primary-brand;
 }
 .loading{
-  color: #FFF;
+  color: $primary-title;
   width: 100%;
   text-align: center;
 }
@@ -107,6 +107,7 @@ p{
 .section-header{
   display: flex;
   margin-bottom: 20px;
+  position: relative;
   @media screen and (min-width: $media-tablet) {
   margin-bottom: 30px;
   }

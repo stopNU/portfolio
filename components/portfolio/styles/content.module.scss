@@ -7,6 +7,20 @@
     margin-bottom: 10px;
 }
 
+.nextProject{
+    display: none;
+    @media screen and (min-width: $media-xsmall) {
+    color: $primary-title;
+    display: block;
+    position: absolute;
+    right: 0;
+        svg{
+            position: relative;
+            top: 3px;
+        }
+    }
+}
+
 .description{
     display: grid;
     @media screen and (min-width: $media-tablet) {

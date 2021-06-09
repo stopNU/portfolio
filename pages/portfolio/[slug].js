@@ -15,20 +15,9 @@ import Banner from '../../components/shared/banner'
 
 const fetcher = url => fetch(url).then(r => r.json())
 
-async function getNextProject() {
-  //console.log('projects', projects)
-  let slugArray = []
-  //const { data: projects, error } = useSWR('/api/projects', fetcher)
-  //console.log('projects', projects)
-  //if(projects != undefined){
-    //slugArray =  projects.map(a => a.slug)
-  //}
-  //console.log("RETURN")
-  return ['slugArray']
-}
-
 export default function PortfolioProject({ file }) {
-    console.log('file', file)
+    let { data: projects, error } = useSWR(`/api/projects`, fetcher)
+
     const formOptions = {
         label: 'Project Page',
         fields: [
@@ -123,6 +112,23 @@ export default function PortfolioProject({ file }) {
     usePlugin(form)
     useGithubToolbarPlugins()
     
+    console.log("projects", projects, data.finished_at)
+
+    let closest = ''
+
+    if(projects && projects.length > 0){
+      projects.forEach((d) => {
+        //const date = new Date(d);
+        console.log("d", d.name, d.finished_at, data.finished_at)
+        if (data.finished_at > d.finished_at) {
+          console.log("selected", d, "closest", closest)
+          closest = d.slug;
+        }
+      });
+    }
+
+    console.log("closest", closest);
+    
 
     return (
       <Layout>
@@ -136,14 +142,14 @@ export default function PortfolioProject({ file }) {
           <Image
             className={styles.image}
             src={data.content.hero_image}
-            alt="Picture of the author"
+            alt={`Website screenshot of ${data.name}`}
             width={1900}
             height={480}
             priority
           />}
         </section>
 
-        <Content data={data.content} />
+        <Content data={data.content} next={closest} />
         <Contact data={contact} />
         <Banner data={banner} />
       </Layout>

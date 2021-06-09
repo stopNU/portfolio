@@ -1,6 +1,8 @@
 import styles from './styles/content.module.scss'
 import SocialMedia from '../shared/social-media.js'
 import Image from 'next/image'
+import Link from 'next/link'
+import { MdChevronRight } from 'react-icons/md';
 
 export default function Content(props) {
     return (
@@ -12,6 +14,11 @@ export default function Content(props) {
                  
                     <div className="section-header">
                         <h2 className="title">{props.data.title}</h2>
+                        {props.next.length > 0 && 
+                        <Link href={`/portfolio/${props.next}`}>
+                            <a className={styles.nextProject}>Next Project <MdChevronRight /></a>
+                        </Link>
+                        }
                         <div className="border"></div>
                     </div> 
                     
