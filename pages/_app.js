@@ -1,18 +1,23 @@
 import { Provider } from 'next-auth/client'
+import { useEffect } from 'react';
 import { TinaCMS, TinaProvider, useCMS } from 'tinacms'
 import {
   GithubClient,
-  TinacmsGithubProvider,
-  GithubMediaStore,
+  TinacmsGithubProvider
 } from 'react-tinacms-github'
 import { NextGithubMediaStore } from 'next-tinacms-github'
+import TagManager from 'react-gtm-module'
 
 import '../styles/_variables.scss'
 import '../styles/globals.scss'
 import BlogPostCreatorPlugin from '../plugins/BlogPostCreator'
 import { DateFieldPlugin } from "react-tinacms-date"
 
+
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KNHM3W5' });
+  }, []);
   //const [session, loading] = useSession()
   
   const github = new GithubClient({
