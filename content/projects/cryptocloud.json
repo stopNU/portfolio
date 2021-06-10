@@ -13,5 +13,6 @@
     "image": "",
     "website_url": "https://cryptocloud.mobi/"
   },
-  "finished_at": "2021-04-27T00:00:00Z"
+  "finished_at": "2021-04-27T00:00:00Z",
+  "thumbnail": "/static/portfolio-cover-cryptocloud.png"
 }
