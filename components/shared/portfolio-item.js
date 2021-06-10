@@ -19,7 +19,7 @@ export default function PortfolioItem(props) {
                     layout="intrinsic" />
             </div>}
             <div>
-                <p><a className={styles.title} href={props.data.content.website_url} title="Go to website" target="_blank">{props.data.name}</a></p>
+                <p><a className={styles.title} href={props.data.content?.website_url} title="Go to website" target="_blank">{props.data.name}</a></p>
                 <p className={styles.desc}>{props.data.short_description}</p>
             </div>
             <Link href={`/portfolio/${props.data.slug}`}>
