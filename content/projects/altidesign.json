@@ -1,1 +1,15 @@
-{"name":"ALTiDesign","short_description":"Joomla danish","slug":"altidesign","content":{"title":"ALTiDesign","hero_image":"","services":["Website"],"description":"Joomla danish","image":"","website_url":""}}
+{
+    "name": "ALTiDesign",
+    "short_description": "Joomla danish",
+    "slug": "altidesign",
+    "content": {
+        "title": "ALTiDesign",
+        "hero_image": "",
+        "services": [
+            "Website"
+        ],
+        "description": "Joomla danish",
+        "image": "",
+        "website_url": ""
+    }
+}

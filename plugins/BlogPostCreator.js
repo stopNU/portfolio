@@ -52,6 +52,7 @@ const BlogPostCreatorPlugin = {
             "short_description": form.short_description,
             "slug": form.slug,
             "thumbnail": form.thumbnail,
+            "finished_at": form.finished_at,
             "content": {
               "title": form.name,
               "hero_image": "",
@@ -61,7 +62,7 @@ const BlogPostCreatorPlugin = {
               "description": form.short_description,
               "image": "",
               "website_url": ""
-            },
+            }
         }
   
       cms.api.github
