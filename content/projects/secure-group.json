@@ -1,11 +1,10 @@
 {
   "name": "Secure Group",
-  "short_description": "Company wikipedia developed with MediaWiki.",
+  "short_description": "Company website developed with VueJS using the NuxtJS framework.",
   "slug": "secure-group",
   "thumbnail": "/static/portfolio-cover-img-securegroup-desk.png",
   "content": {
     "title": "Secure Group",
-    "subtitle": "International provider of solutions for encrypted communications",
     "hero_image": "/static/secure-group-header.jpg",
     "services": [
       "Website",

@@ -1,6 +1,6 @@
 {
   "name": "ALTiDesign",
-  "short_description": "Joomla danish",
+  "short_description": "Website developed in Joomla.",
   "slug": "altidesign",
   "content": {
     "title": "ALTiDesign",
@@ -9,10 +9,10 @@
       "Website",
       "Joomla"
     ],
-    "description": "Joomla danish",
+    "description": "Danish graphics and web agency offering multiple services. Besides occasionally working for them, I developed their website back in 2014 for them in Joomla, since the client was familiar with the CMS.",
     "image": "",
-    "website_url": ""
+    "website_url": "https://www.altidesign.dk/"
   },
-  "thumbnail": "/static/altidesign-cover-cryptocloud.png",
+  "thumbnail": "/static/portfolio-cover-altidesign.png",
   "finished_at": "2017-02-08T00:00:00Z"
 }

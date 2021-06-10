@@ -16,9 +16,11 @@ import Banner from '../../components/shared/banner'
 const fetcher = url => fetch(url).then(r => r.json())
 
 const getClosest = (data, target) => {
-  let closest = ''
+  let closest = {
+    finished_at: '0'
+  }
   data.forEach(element => {
-    if(element.finished_at < target && element.finished_at > closest){
+    if(element.finished_at < target && element.finished_at > closest.finished_at){
       closest = element
     }
   });

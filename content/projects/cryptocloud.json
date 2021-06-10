@@ -1,6 +1,6 @@
 {
   "name": "CryptoCloud",
-  "short_description": "Short",
+  "short_description": "Custom theme WordPress site using ACF plugin for data management.",
   "slug": "cryptocloud",
   "content": {
     "title": "CryptoCloud",
@@ -9,10 +9,10 @@
       "Website",
       "WordPress"
     ],
-    "description": "BTC TO THE MOON!",
+    "description": "WordPress site for encrypted mobile device provider. Using a custom theme and the ACF plugin to manage data inside WordPress admin.",
     "image": "",
     "website_url": "https://cryptocloud.mobi/"
   },
-  "finished_at": "2021-04-27T00:00:00Z",
+  "finished_at": "2018-04-27T00:00:00Z",
   "thumbnail": "/static/portfolio-cover-cryptocloud.png"
 }
