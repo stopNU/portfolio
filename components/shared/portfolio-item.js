@@ -5,6 +5,7 @@ import { MdChevronRight } from 'react-icons/md';
 
 
 export default function PortfolioItem(props) {
+    console.log('props', props)
     return (
         <div className={styles.box}>             
             {props.data.thumbnail &&
@@ -18,7 +19,7 @@ export default function PortfolioItem(props) {
                     layout="intrinsic" />
             </div>}
             <div>
-                <p className={styles.title}>{props.data.name}</p>
+                <p><a className={styles.title} href={props.data.content.website_url} title="Go to website" target="_blank">{props.data.name}</a></p>
                 <p className={styles.desc}>{props.data.short_description}</p>
             </div>
             <Link href={`/portfolio/${props.data.slug}`}>

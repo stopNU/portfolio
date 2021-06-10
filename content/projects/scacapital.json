@@ -1,6 +1,6 @@
 {
     "name": "SCAcapital",
-    "short_description": "Simple presentatial website served static with NuxtJS (VueJS).",
+    "short_description": "Simple presentational website served static with NuxtJS (VueJS).",
     "slug": "scacapital",
     "content": {
       "title": "SCAcapital",
@@ -15,6 +15,6 @@
       "image": "",
       "website_url": "https://scacapital.tech/"
     },
-    "thumbnail": "/static/portfolio-cover-initize.png",
+    "thumbnail": "/static/portfolio-cover-scacapital.png",
     "finished_at": "2020-10-08T00:00:00Z"
   }
