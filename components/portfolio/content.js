@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { MdChevronRight } from 'react-icons/md';
 
 export default function Content(props) {
+    
     return (
         <section className={styles.contentWrapper}>
             <div className="inner-wrapper">
@@ -14,11 +15,6 @@ export default function Content(props) {
                  
                     <div className="section-header">
                         <h2 className="title">{props.data.title}</h2>
-                        {props.next.length > 0 && 
-                        <Link href={`/portfolio/${props.next}`}>
-                            <a className={styles.nextProject}>Next Project <MdChevronRight /></a>
-                        </Link>
-                        }
                         <div className="border"></div>
                     </div> 
                     
@@ -36,19 +32,24 @@ export default function Content(props) {
                     </div>
 
                     <div className={styles.imageWrapper}>
-                        <Image
+                        {props.data.image && <Image
                             className={styles.image}
                             src={props.data.image}
                             alt="Picture of the author"
                             width={1109}
                             height={473}
                             layout="responsive"
-                        />
+                        />}
+                        <div className={styles.buttonWrapper}>
+                            <a href={props.data.website_url} rel="noopener" target="_blank" className="btn">View Website</a>
+                        </div>
                     </div>
 
-                    <div className={styles.buttonWrapper}>
-                        <a href={props.data.website_url} rel="noopener" target="_blank" className="btn">View Website</a>
-                    </div>
+                    {props.next?.length > 0 && 
+                        <Link href={`/portfolio/${props.next}`}>
+                            <a className={styles.nextProject}>Next Project <MdChevronRight /></a>
+                        </Link>
+                    }
                     
                 </div>
             </div>

@@ -10,7 +10,7 @@
     "services": [
       "Website",
       "Responsive",
-      "Static Site",
+      "Static",
       "VueJS"
     ],
     "description": "Static website developed with VueJS using the NuxtJS framework to achieve best performance results.",

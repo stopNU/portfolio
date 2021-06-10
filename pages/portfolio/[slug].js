@@ -15,6 +15,16 @@ import Banner from '../../components/shared/banner'
 
 const fetcher = url => fetch(url).then(r => r.json())
 
+const getClosest = (data, target) => {
+  let closest = ''
+  data.forEach(element => {
+    if(element.finished_at < target && element.finished_at > closest){
+      closest = element
+    }
+  });
+  return closest
+}
+
 export default function PortfolioProject({ file }) {
     let { data: projects, error } = useSWR(`/api/projects`, fetcher)
 
@@ -112,22 +122,10 @@ export default function PortfolioProject({ file }) {
     usePlugin(form)
     useGithubToolbarPlugins()
     
-    console.log("projects", projects, data.finished_at)
-
     let closest = ''
-
     if(projects && projects.length > 0){
-      projects.forEach((d) => {
-        //const date = new Date(d);
-        console.log("d", d.name, d.finished_at, data.finished_at)
-        if (data.finished_at > d.finished_at) {
-          console.log("selected", d, "closest", closest)
-          closest = d.slug;
-        }
-      });
+      closest = getClosest(projects, data.finished_at)
     }
-
-    console.log("closest", closest);
     
 
     return (
@@ -149,7 +147,7 @@ export default function PortfolioProject({ file }) {
           />}
         </section>
 
-        <Content data={data.content} next={closest} />
+        <Content data={data.content} next={closest.slug} />
         <Contact data={contact} />
         <Banner data={banner} />
       </Layout>
