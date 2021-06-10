@@ -1,0 +1,21 @@
+{
+    "name": "T.A.G. Consultation",
+    "short_description": "Static NuxtJS (VueJS) site with Strapi CMS for handling data.",
+    "slug": "tag",
+    "content": {
+      "title": "T.A.G. Consultation",
+      "hero_image": "",
+      "services": [
+        "Website",
+        "VueJS",
+        "Static",
+        "NuxtJS",
+        "Strapi"
+      ],
+      "description": "Simple one page built as a static website with NuxtJS. Focus was on speed both in regards to performance but also in terms of development.",
+      "image": "",
+      "website_url": "https://www.tag-consultation.net/"
+    },
+    "thumbnail": "/static/portfolio-cover-initize.png",
+    "finished_at": "2020-08-08T00:00:00Z"
+  }
