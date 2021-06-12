@@ -4,7 +4,7 @@
     "slug": "initize",
     "content": {
       "title": "Initize Media",
-      "hero_image": "",
+      "hero_image": "/static/projects/hero-banner-initize-2.jpg",
       "services": [
         "Website",
         "VueJS",

@@ -139,14 +139,15 @@ export default function PortfolioProject({ file }) {
         </Head>
         <section className={styles.headerWrapper}>
           {data.content && data.content.hero_image && 
-          <Image
-            className={styles.image}
-            src={data.content.hero_image}
-            alt={`Website screenshot of ${data.name}`}
-            width={1900}
-            height={480}
-            priority
-          />}
+          <div className={styles.imageWrapper}>
+            <Image
+              className={styles.image}
+              src={data.content.hero_image}
+              alt={`Website screenshot of ${data.name}`}
+              layout="fill"
+              priority
+            />
+          </div>}
         </section>
 
         <Content data={data.content} next={closest.slug} />
