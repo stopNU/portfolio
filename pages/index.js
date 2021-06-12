@@ -191,7 +191,7 @@ export default function Home({ file }) {
       <Head>
         <title>MT Web - Freelance Web Developer</title>
         <meta property="og:title" content="MT Web - Freelance Web Developer" key="title" />
-        <meta property="og:description" content="Skilled developer working with both big and small companies. Experienced in developing websites in both static websites with frameworks like VueJS and ReactJS and traditional websites with CMS' like WordPress or Joomla." key="description" />
+        <meta property="og:description" content="Skilled developer working with both large and small companies. Experienced in developing websites in both static websites with frameworks like VueJS and ReactJS and traditional websites with CMS' like WordPress or Joomla." key="description" />
         <meta property="og:url" content='https://mt-web.tech/' key="ogurl" />
         <meta property="og:image" content={data.header.image} key="ogimage" />
       </Head>

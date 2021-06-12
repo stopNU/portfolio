@@ -4,7 +4,7 @@
     "slug": "tag",
     "content": {
       "title": "T.A.G. Consultation",
-      "hero_image": "",
+      "hero_image": "/static/projects/hero-banner-tag.jpg",
       "services": [
         "Website",
         "VueJS",

@@ -144,7 +144,7 @@ export default function PortfolioProject({ file }) {
               className={styles.image}
               src={data.content.hero_image}
               alt={`Website screenshot of ${data.name}`}
-              layout="fill"
+              layout="fill" objectFit="cover"
               priority
             />
           </div>}

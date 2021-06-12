@@ -4,7 +4,7 @@
     "slug": "scacapital",
     "content": {
       "title": "SCAcapital",
-      "hero_image": "",
+      "hero_image": "/static/projects/hero-banner-scacapital.jpg",
       "services": [
         "Website",
         "VueJS",
