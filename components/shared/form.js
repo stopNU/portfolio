@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-export default () => {
+const Form = () => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -121,3 +121,5 @@ export default () => {
     </main>
   )
 }
+
+export default Form
