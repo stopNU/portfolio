@@ -4,7 +4,7 @@
     "slug": "tango",
     "content": {
       "title": "Tango Secure",
-      "hero_image": "",
+      "hero_image": "/static/projects/hero-banner-tango.jpg",
       "services": [
         "Website",
         "VueJS",
