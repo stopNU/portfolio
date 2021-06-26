@@ -13,8 +13,8 @@
       "CMS",
       "Responsive"
     ],
-    "description": "Website developed with VueJS using the NuxtJS framework to achieve Server-side rendering (SSR) since SEO was a top priority for the client. Setup using Forestry CMS for data storage.",
-    "image": "/static/temp-sg-image.PNG",
+    "description": "Wikipedia for Secure Group to show their internal organization and management style publicly. Developed with MediaWiki with some custom development on the frontpage.",
+    "image": "/static/portfolio-sg-wiki-preview-desk.jpg",
     "website_url": "https://wiki.careers.securegroup.com/index.php?title=Main_Page"
   },
   "finished_at": "2021-01-04T00:00:00Z"
