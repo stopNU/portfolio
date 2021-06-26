@@ -5,8 +5,7 @@
   "thumbnail": "/static/portfolio-cover-img-securegroupwiki-desk.png",
   "content": {
     "title": "Secure Group Wiki",
-    "subtitle": "International provider of solutions for encrypted communications",
-    "hero_image": "/static/secure-group-header.jpg",
+    "hero_image": "/static/projects/hero-banner-wiki.jpg",
     "services": [
       "WikiPedia",
       "Custom",

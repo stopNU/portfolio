@@ -13,7 +13,7 @@
         "Strapi"
       ],
       "description": "Simple one page built as a static website with NuxtJS. Focus was on speed both in regards to performance but also in terms of development.",
-      "image": "",
+      "image": "/static/projects/portfolio-tag-preview-desk.jpg",
       "website_url": "https://www.tag-consultation.net/"
     },
     "thumbnail": "/static/portfolio-cover-tag.png",
