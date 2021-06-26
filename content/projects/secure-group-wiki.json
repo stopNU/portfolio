@@ -2,7 +2,7 @@
   "name": "Secure Group Wiki",
   "short_description": "Company wikipedia developed with MediaWiki.",
   "slug": "secure-group-wiki",
-  "thumbnail": "/static/projects/portfolio-cover-img-securegroupwiki-desk.png",
+  "thumbnail": "/static/portfolio-cover-img-securegroupwiki-desk.png",
   "content": {
     "title": "Secure Group Wiki",
     "subtitle": "International provider of solutions for encrypted communications",
@@ -14,7 +14,7 @@
       "Responsive"
     ],
     "description": "Wikipedia for Secure Group to show their internal organization and management model publicly. Developed with MediaWiki with some custom development on the frontpage.",
-    "image": "/static/portfolio-sg-wiki-preview-desk.jpg",
+    "image": "/static/projects/portfolio-sg-wiki-preview-desk.jpg",
     "website_url": "https://wiki.careers.securegroup.com/index.php?title=Main_Page"
   },
   "finished_at": "2021-01-04T00:00:00Z"
