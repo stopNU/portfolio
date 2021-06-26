@@ -58,8 +58,8 @@ export default function PortfolioProject({ file }) {
             label: 'Thumbnail',
             name: 'thumbnail',
             component: 'image',
-            parse: media => `/static/${media.filename}`,
-            uploadDir: () => '/static/',
+            parse: media => `/static/projects/${media.filename}`,
+            uploadDir: () => '/static/projects/',
             previewSrc: fullSrc => fullSrc.replace('', ''),
           },
           {
@@ -78,8 +78,8 @@ export default function PortfolioProject({ file }) {
                 label: 'Hero image',
                 name: 'hero_image',
                 component: 'image',
-                parse: media => `/static/${media.filename}`,
-                uploadDir: () => '/static/',
+                parse: media => `/static/projects/${media.filename}`,
+                uploadDir: () => '/static/projects/',
                 previewSrc: fullSrc => fullSrc.replace('', ''),
               },
               { 
@@ -95,8 +95,8 @@ export default function PortfolioProject({ file }) {
                 label: 'Image (content)',
                 name: 'image',
                 component: 'image',
-                parse: media => `/static/${media.filename}`,
-                uploadDir: () => '/static/',
+                parse: media => `/static/projects/${media.filename}`,
+                uploadDir: () => '/static/projects/',
                 previewSrc: fullSrc => fullSrc.replace('', ''),
               },
               {
@@ -144,7 +144,8 @@ export default function PortfolioProject({ file }) {
               className={styles.image}
               src={data.content.hero_image}
               alt={`Website screenshot of ${data.name}`}
-              layout="fill" objectFit="cover"
+              layout="fill" 
+              objectFit="cover"
               priority
             />
           </div>}
