@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://mtweb.tech</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.847Z</lastmod></url>
-<url><loc>https://mtweb.tech/login</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/altidesign</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/cryptocloud</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/initize</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/scacapital</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/secure-group-wiki</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/secure-group</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/subrosa</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/tag</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/tango</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
-<url><loc>https://mtweb.tech/portfolio/transworld</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-26T08:26:00.848Z</lastmod></url>
+<url><loc>https://mtweb.tech</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.271Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.273Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/altidesign</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.273Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/cryptocloud</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.273Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/initize</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.274Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/scacapital</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.274Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/secure-group-wiki</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.274Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/secure-group</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.274Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/subrosa</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.274Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/tag</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.274Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/tango</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.274Z</lastmod></url>
+<url><loc>https://mtweb.tech/portfolio/transworld</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-07-27T15:06:28.274Z</lastmod></url>
 </urlset>
