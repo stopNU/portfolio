@@ -33,7 +33,7 @@
         "icon": "/static/1280px-React-icon.svg.png"
       },
       {
-        "icon": "/static/Download-WordPress-blue-vector-logo.svg",
+        "icon": "/static/wordpress-logo.png",
         "title": "WordPress",
         "percentage": 80,
         "description": "Definitely not my first love in front-end development, but with time you learn to appreciate it (for some things).."
