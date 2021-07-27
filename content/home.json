@@ -31,6 +31,12 @@
         "description": "Any front-end developer needs to know this one, actually this site is built with NextJS (and Tina CMS).",
         "percentage": 50,
         "icon": "/static/1280px-React-icon.svg.png"
+      },
+      {
+        "icon": "/static/Download-WordPress-blue-vector-logo.svg",
+        "title": "WordPress",
+        "percentage": 80,
+        "description": "Definitely not my first love in front-end development, but with time you learn to appreciate it (for some things).."
       }
     ],
     "title": "Skill set"
