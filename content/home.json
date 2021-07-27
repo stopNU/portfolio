@@ -37,6 +37,12 @@
         "title": "WordPress",
         "percentage": 80,
         "description": "Definitely not my first love in front-end development, but with time you learn to appreciate it (for some things).."
+      },
+      {
+        "title": "Shopify",
+        "percentage": 50,
+        "icon": "/static/shopify-logo-vector.svg",
+        "description": "Another necessity for a freelance developer. Can't at least consider it if you're building an e-commerce site - Possibly with a custom frontend."
       }
     ],
     "title": "Skill set"
