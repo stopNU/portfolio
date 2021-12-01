@@ -1,1 +1,19 @@
-{"name":"Platinum Rose Tattoo Aftercare","short_description":"New ecommerce website built with Shopify. Expanse theme used as base, with custom components etc. added as needed. ","slug":"platinum-rose-tattoo-aftercare","thumbnail":"/static/pr-cover.png","content":{"title":"Platinum Rose Tattoo Aftercare","hero_image":"","services":["Website"],"description":"New ecommerce website built with Shopify. Expanse theme used as base, with custom components etc. added as needed. ","image":"","website_url":""}}
+{
+  "name": "Platinum Rose Tattoo Aftercare",
+  "short_description": "New ecommerce website built with Shopify. Expanse theme used as base, with custom components etc. added as needed. ",
+  "slug": "platinum-rose-tattoo-aftercare",
+  "thumbnail": "/static/projects/pr-cover2.png",
+  "content": {
+    "title": "Platinum Rose Tattoo Aftercare",
+    "hero_image": "",
+    "services": [
+      "Website",
+      "Shopify",
+      "SEO"
+    ],
+    "description": "New ecommerce website built with Shopify. Expanse theme used as base, with custom components etc. added as needed. ",
+    "image": "",
+    "website_url": "https://platinumrosetattooaftercare.com/",
+    "next-project": "secure-group"
+  }
+}
