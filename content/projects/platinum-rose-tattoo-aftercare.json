@@ -5,14 +5,14 @@
   "thumbnail": "/static/projects/pr-cover2.png",
   "content": {
     "title": "Platinum Rose Tattoo Aftercare",
-    "hero_image": "/static/projects/pr-hero.png",
+    "hero_image": "/static/projects/pr-hero.jpg",
     "services": [
       "Website",
       "Shopify",
       "SEO"
     ],
     "description": "New ecommerce website built with Shopify. Expanse theme used as base, with custom components etc. added as needed. ",
-    "image": "",
+    "image": "/static/projects/portfolio-pr-preview-desk.png",
     "website_url": "https://platinumrosetattooaftercare.com/",
     "next-project": "secure-group"
   }
