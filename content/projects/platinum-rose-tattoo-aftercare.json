@@ -5,7 +5,7 @@
   "thumbnail": "/static/projects/pr-cover2.png",
   "content": {
     "title": "Platinum Rose Tattoo Aftercare",
-    "hero_image": "",
+    "hero_image": "/static/projects/pr-hero.png",
     "services": [
       "Website",
       "Shopify",
