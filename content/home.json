@@ -12,7 +12,7 @@
         "title": "CSS (SASS)",
         "description": "Spent so much time looking at pixels I sometimes wonder what normal people see.",
         "icon": "/static/css-3.png",
-        "percentage": 95
+        "percentage": 100
       },
       {
         "description": "The duct tape of the internet.",
@@ -29,7 +29,7 @@
       {
         "title": "ReactJS (NextJS)",
         "description": "Any front-end developer needs to know this one, actually this site is built with NextJS (and Tina CMS).",
-        "percentage": 50,
+        "percentage": 75,
         "icon": "/static/1280px-React-icon.svg.png"
       },
       {
@@ -40,7 +40,7 @@
       },
       {
         "title": "Shopify",
-        "percentage": 50,
+        "percentage": 60,
         "icon": "/static/shopify-logo-vector.svg",
         "description": "Another necessity for a freelance developer. Can't at least consider it if you're building an e-commerce site - Possibly with a custom frontend."
       }
