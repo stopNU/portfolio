@@ -1,1 +1,19 @@
-{"name":"Secure Group Blog","short_description":"Company blog developed in Hubspot (with HubL).","slug":"secure-group-blog","thumbnail":"/static/portfolio-cover-securegroup-blog.png","finished_at":"2021-01-31T00:00:00Z","content":{"title":"Secure Group Blog","hero_image":"","services":["Website"],"description":"Company blog developed in Hubspot (with HubL).","image":"","website_url":""}}
+{
+  "name": "Secure Group Blog",
+  "short_description": "Company blog developed in Hubspot (with HubL).",
+  "slug": "secure-group-blog",
+  "thumbnail": "/static/portfolio-cover-securegroup-blog.png",
+  "finished_at": "2021-01-31T00:00:00Z",
+  "content": {
+    "title": "Secure Group Blog",
+    "hero_image": "/static/projects/secure-group-header.jpg",
+    "services": [
+      "Hubspot",
+      "Blog"
+    ],
+    "description": "Company blog developed in Hubspot (with HubL).",
+    "image": "/static/projects/portfolio-securegroup-blog-preview-desk.jpg",
+    "website_url": "https://blog.securegroup.com/",
+    "next-project": "secure-group-wiki"
+  }
+}
