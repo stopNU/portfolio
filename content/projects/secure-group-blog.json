@@ -6,7 +6,7 @@
   "finished_at": "2021-01-31T00:00:00Z",
   "content": {
     "title": "Secure Group Blog",
-    "hero_image": "/static/projects/secure-group-header.jpg",
+    "hero_image": "/static/secure-group-header.jpg",
     "services": [
       "Hubspot",
       "Blog"
