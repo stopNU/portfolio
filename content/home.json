@@ -77,10 +77,10 @@
         "thumbnail": "/static/portfolio-cover-img-securegroup-desk.png"
       },
       {
-        "thumbnail": "/static/portfolio-cover-img-securegroupwiki-desk.png",
-        "name": "Secure Group Wiki",
-        "short_description": "Company wikipedia developed with MediaWiki.",
-        "slug": "secure-group-wiki"
+        "thumbnail": "/static/portfolio-cover-avem.png",
+        "name": "Avem",
+        "short_description": "Development of new company website using Next.js and Prismic as headless CMS.",
+        "slug": "avem"
       },
       {
         "thumbnail": "/static/portfolio-cover-img-transworld-desk.png",
