@@ -47,7 +47,7 @@ const Form = () => {
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))
     axios({
       method: 'POST',
-      url: 'https://formspree.io/xvodaqpw',
+      url: 'https://formspree.io/f/xgedoqwn',
       data: inputs,
     })
       .then((response) => {
