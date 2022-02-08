@@ -21,28 +21,28 @@
         "percentage": 75
       },
       {
-        "title": "VueJS (NuxtJS)",
+        "title": "VueJS (Nuxt.js)",
         "icon": "/static/kisspng-vue-js-javascript-library-angularjs-react-vue-js-5b4ebe1c091993.8950282915318871320373.png",
         "description": "My first real love in front-end development. Big believer in static sites hence NuxtJS.",
-        "percentage": 85
+        "percentage": 80
       },
       {
-        "title": "ReactJS (NextJS)",
+        "title": "ReactJS (Next.js)",
         "description": "Any front-end developer needs to know this one, actually this site is built with NextJS (and Tina CMS).",
-        "percentage": 75,
+        "percentage": 80,
         "icon": "/static/1280px-React-icon.svg.png"
       },
       {
         "icon": "/static/wordpress-logo.png",
         "title": "WordPress",
         "percentage": 80,
-        "description": "Definitely not my first love in front-end development, but with time you learn to appreciate it (for some things).."
+        "description": "Not my first love in front-end development, but with time you learn to appreciate it."
       },
       {
         "title": "Shopify",
         "percentage": 60,
         "icon": "/static/shopify-logo-vector.svg",
-        "description": "Another necessity for a freelance developer. Can't at least consider it if you're building an e-commerce site - Possibly with a custom frontend."
+        "description": "Another necessity for a freelance developer. Always part of the options when building an e-commerce site."
       }
     ],
     "title": "Skill set"
@@ -52,7 +52,7 @@
     "title": "Michael Thomsen",
     "subtitle": "Experienced Web Developer",
     "image": "/static/mike-desk-updated-2.png",
-    "text": "Skilled developer working with both large and small companies. Experienced in developing static websites with frameworks like VueJS and ReactJS and traditional websites with CMS' like WordPress or Joomla."
+    "text": "Skilled developer working with both large and small companies. Experienced in developing JamStack sites with frameworks like VueJS and ReactJS (especially Next.js and Nuxt.js) but also more traditional CMS' like WordPress and Shopify."
   },
   "about": {
     "title": "A little about me",
